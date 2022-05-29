@@ -1,0 +1,58 @@
+[
+    {
+        "title": "Văn Phòng Thám Tử Quái Vật-Tập 11",
+        "img" : "thamtuquaivat.jpg",
+        "price" : 30000,
+        "sale" : 0.1,
+        "amount" : 72,
+        "sold" :4
+    },
+    {
+        "title": "Đọc nhiều nhớ được bao nhiêu",
+        "img" : "docnhieunhobaonhie.jpg",
+        "price" : 99000,
+        "sale" : 0.3,
+        "amount" : 100,
+        "sold" :5
+    },
+    {
+        "title": "Sao chúng ta lại ngủ - Why We Sleep",
+        "img" : "saochungtalainghu.jpg",
+        "price" : 174000,
+        "sale" : 0.3,
+        "amount" : 100,
+        "sold" :50
+    },
+    {
+        "title": "Dã Ngoại Thảnh Thơi - Yurucamp - Tập 8 - Tặng Kèm PVC Check in Card",
+        "img" : "dangoaithanhthoi.jpg",
+        "price" : 34000,
+        "sale" : 0.1,
+        "amount" : 200,
+        "sold" :8
+    },
+    {
+        "title": "Bộ Sách Nam Kỳ Và Cư Dân Các Tỉnh (Bộ 2 Cuốn)",
+        "img" : "namkycudan.jpg",
+        "price" : 598000,
+        "amount" : 1050,
+        "sold" :20,
+        "sale" : 0.3
+    },
+    {
+        "title": "Thói Quen Hoài Nghi - Bỏ Thói Quen Chỉ Trích Bản Thân Và Thay Đổi Cuộc Sống Bằng Phương Pháp Hoài Nghi Tích Cực",
+        "img" : "thoi-quen.jpg",
+        "price" : 67860 ,
+        "amount" : 10000,
+        "sold" :200,
+        "sale" : 0.3
+    },
+    {
+        "title": "Túp Lều Bác Tôm (2022)",
+        "img" : "tup-leu-bac-tom--bia.jpg",
+        "price" : 100750 ,
+        "amount" : 1000,
+        "sold" :98,
+        "sale" : 0.13
+    }
+]

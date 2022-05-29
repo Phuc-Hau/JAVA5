@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <div  class="row danhmuc"  >
     <div class="col-sm-3" style="border-right: 1px solid #b8b8b8; margin: 7px 0px;">
       <h4>Danh mục sản phẩm</h4>

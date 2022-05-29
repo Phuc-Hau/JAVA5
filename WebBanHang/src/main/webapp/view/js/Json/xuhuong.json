@@ -1,0 +1,93 @@
+[
+    {
+        "title": "Văn Phòng Thám Tử Quái Vật-Tập 11",
+        "img" : "thamtuquaivat.jpg",
+        "price" : 30000,
+        "amount" : 1200,
+        "sold" :50
+    },
+    {
+        "title": "Đọc nhiều nhớ được bao nhiêu",
+        "img" : "docnhieunhobaonhie.jpg",
+        "price" : 99000,
+        "amount" : 100000,
+        "sold" :1200
+    },
+    {
+        "title": "Sao chúng ta lại ngủ - Why We Sleep",
+        "img" : "saochungtalainghu.jpg",
+        "price" : 174000,
+        "amount" : 100500,
+        "sold" : 1200
+    },
+    {
+        "title": "Dã Ngoại Thảnh Thơi - Yurucamp - Tập 8 - Tặng Kèm PVC Check in Card",
+        "img" : "dangoaithanhthoi.jpg",
+        "price" : 34000,
+        "amount" : 200,
+        "sold" :12
+    },
+    {
+        "title": "Bộ Sách Nam Kỳ Và Cư Dân Các Tỉnh (Bộ 2 Cuốn)",
+        "img" : "namkycudan.jpg",
+        "price" : 598000,
+        "amount" : 1050,
+        "sold" :20
+    },
+    {
+        "title": "Thói Quen Hoài Nghi - Bỏ Thói Quen Chỉ Trích Bản Thân Và Thay Đổi Cuộc Sống Bằng Phương Pháp Hoài Nghi Tích Cực",
+        "img" : "thoi-quen.jpg",
+        "price" : 67860 ,
+        "amount" : 10000,
+        "sold" :200
+    },
+    {
+        "title": "10 Điều Răn Lãnh Đạo Tối Ưu Nhất Thế Giới",
+        "img" : "10-dieu-ran-lanh-dao-toi-uu-nhat-the-gioi_xp-01.jpg",
+        "price" : 82650 ,
+        "amount" : 1000,
+        "sold" :98
+    },
+    {
+        "title": "Túp Lều Bác Tôm (2022)",
+        "img" : "tup-leu-bac-tom--bia.jpg",
+        "price" : 100750 ,
+        "amount" : 1000,
+        "sold" :98
+    },
+    {
+        "title": "Nhanh! Tôi Cần Trở Thành Nhà Lãnh Đạo Trong 30 Ngày",
+        "img" : "nhanh-toi-can-tro-thanh-nha-lanh-dao-30-ngay_xp-01.jpg",
+        "price" : 74820 ,
+        "amount" : 10007,
+        "sold" :1200
+    },
+    {
+        "title": "Lược Sử Toán Học - Từ Ý Tưởng Đến Thực Hành",
+        "img" : "luoc-su-toan-hoc.jpg",
+        "price" : 121600 ,
+        "amount" : 3000,
+        "sold" :120
+    },
+    {
+        "title": "Để Cuộc Họp Làm Tăng Doanh Số - Họp Là Cả Một Nghệ Thuật",
+        "img" : "de-cuoc-hop-tang-doanh-so_xp-01.jpg",
+        "price" : 100150 ,
+        "amount" : 3070,
+        "sold" :1000
+    },
+    {
+        "title": "Bí Quyết Vẽ Phong Cảnh Tự Nhiên - Drawing Nature For The Absolute Beginner (Tái Bản)",
+        "img" : "bi-quyet-ve-phong-canh-tu-nhien-tb-2022_xp-01.jpg",
+        "price" : 143550,
+        "amount" : 3070,
+        "sold" :200
+    },
+    {
+        "title": "Nhà Có 5 Nàng Dâu - Tập 11",
+        "img" : "nha-5-nang-dau-_-t_p-11.jpg",
+        "price" : 25000,
+        "amount" : 5000,
+        "sold" :2100
+    }
+]
