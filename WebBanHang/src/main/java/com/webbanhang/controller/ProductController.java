@@ -1,5 +1,7 @@
 package com.webbanhang.controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,18 +25,18 @@ public class ProductController {
 	@Autowired
 	ProductDao productDao;
 	
-	@Autowired
-	OrderDetailDao orderDetailDao;
 	
 	@RequestMapping("/product/index")
 	public String index(Model model) {
 		try {
-			List<OrderDetail> list = orderDetailDao.findAll();
+			List<Product> list = productDao.findAll();
+			System.out.println(list.get(0).getImgs().get(0).getImage()); 
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		model.addAttribute("product",productDao.findAll());
+		
+//		model.addAttribute("product",productDao.findAll());
 		return "index";
 	}
 }
