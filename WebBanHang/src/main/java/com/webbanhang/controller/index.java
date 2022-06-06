@@ -8,6 +8,6 @@ public class index {
 
 	@RequestMapping("/index")
 	public String index() {
-		return "html/cart";
+		return "index";
 	}
 }

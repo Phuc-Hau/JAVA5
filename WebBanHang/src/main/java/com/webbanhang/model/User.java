@@ -12,28 +12,34 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "[User]")
 public class User {
+
 
 	@Id
 	@Column(name="ID")
 	private int id;
 
+	@Column(name="Username")
+	private String username;
+	
 	@Column(name="Email")
 	private String email;
 
 	@Column(name="Password")
 	private String password;
 
-	private int rule;
-
+	@Column(name="Status")
 	private boolean status;
+	
+	@Column(name="Rules")
+	private int rules;
 
-	@Column(name="Username")
-	private String username;
-
+	
 	//bi-directional many-to-one association to Cutomer
 	@ManyToOne
 	@JoinColumn(name="Cutomers_id")
 	private Cutomer cutomer;
+
 
 }

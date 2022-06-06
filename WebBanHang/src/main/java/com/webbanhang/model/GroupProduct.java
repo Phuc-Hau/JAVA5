@@ -14,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "Groupproduct")
 public class GroupProduct{
 
 	@Id
@@ -27,9 +28,6 @@ public class GroupProduct{
 
 	@Column(name="Name")
 	private String name;
-
-	@Column(name="Order")
-	private int order;
 
 	@Column(name="Status")
 	private int status;

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
-<div ng-controller="Salectl"
+<div 
 	style="margin-top: 10px; position: relative;">
 	<div class="row"
 		style="background: oldlace; padding: 12px; border-bottom: 1px solid rgb(244, 244, 244); display: flex;">
