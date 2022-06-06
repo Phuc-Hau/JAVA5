@@ -20,33 +20,33 @@
 	<!-- Sản phẩm Sale -->
 	<div class="row items" style="min-height: 50px; background: white;">
 
-		<div class="col-sm-3 hotsp" ng-repeat="sale in saleSP">
-			<a href="" ng-click="insert($index)">
+		<div class="col-sm-3 hotsp">
+			<a href="">
 
 				<div class="sp">
 					<!-- anh -->
 					<div>
-						<img style="margin-top: 3px;" src="img/sach/{{sale.img}}"
+						<img style="margin-top: 3px;" src="img/sach/"
 							class="col-sm-12" alt="">
 					</div>
 					<!-- Title -->
 					<h2>
-						<span class="sachtitle">{{sale.title}}</span>
+						<span class="sachtitle">title</span>
 					</h2>
 
 					<!-- Gia -->
 					<div class="salegia">
 						<span
 							style="color: rgba(0, 0, 0, .13); font-size: 16px; text-decoration: line-through;">{{sale.price|number}}đ</span>
-						<span style="color: red;">{{sale.price-(sale.price*sale.sale)|numbers}}
+						<span style="color: red;">sale
 							<span style="margin-left: -5px; font-size: 16px;">đ</span>
-						</span> <span class="DTL">-{{sale.sale|percentage}} </span>
+						</span> <span class="DTL">-% </span>
 					</div>
 					<!-- Thanh sale -->
 					<div class="sale-item__lower-wrapper">
 						<div class="sale-item__lower-left">
 							<div class="sale-progress-bar">
-								<div class="sale-progress-bar__text">Đã bán {{sale.sold}}
+								<div class="sale-progress-bar__text">Đã bán price
 								</div>
 								<div class="sale-progress-bar__complement-wrapper">
 									<!-- Thay đổi -->

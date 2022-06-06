@@ -12,19 +12,19 @@
 	<div class="row"
 		style="min-height: 50px; background: white;">
 
-	<c:forEach var="item" items="product">
-		<div class="{{soht}} hotsp">
+	<c:forEach var="item" items="${product}">
+		<div class="hotsp col-sm-2" >
 			<div class="">
-				<a href="/product/sanpham/{{item.id}}"> <!-- anh -->
+				<a href="/product/sanpham/${item.id}"> <!-- anh -->
 					<div>
-						<img style="margin-top: 3px;" src="/view/img/sach/{{item.img}}"
+						<img style="margin-top: 3px;width: 175px;" src="/view/img/AnhWebBanHang/${item.imgs.get(0).image}"
 							class="col-sm-12" alt="">
 					</div> <!-- Title -->
 					<h2>
-						<a class="sachxuhuong">{{item.name}}</a>
+						<a class="sachxuhuong">${item.name}</a>
 					</h2> <!-- Gia -->
 					<div class="xuhuong">
-						<span style="color: red;">{{item.price}}<span
+						<span style="color: red;">${item.price}<span
 							style="font-size: 16px;">Ä‘</span></span> <span
 							style="text-align: right; font-size: 11px;">Ä�Ă£ bĂ¡n
 							{{}}</span>
