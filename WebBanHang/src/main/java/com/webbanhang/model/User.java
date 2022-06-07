@@ -14,7 +14,8 @@ import lombok.NoArgsConstructor;
 @Entity
 public class User {
 
-	@Id
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID")
 	private int id;
 

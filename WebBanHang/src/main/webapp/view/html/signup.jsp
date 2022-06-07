@@ -1,12 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"
+	%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="tab-pane fade " id="nav-home" role="tabpanel"
 	aria-labelledby="nav-home-tab">
 	<div class="row ">
 		<div ng-controller="mydk" class="col-sm-7 " style="min-height: 50px;">
 			<h2>Xin Chào</h2>
-			<form action="" style="padding: 0 30px;" name="frm" class="frm">
+			<form:form action="/account/signup" method="post" modelAttribute="user" style="padding: 0 30px;"
+				name="frm" class="frm">
+				<div class="controll">
+				
+					<form:input path="username" 
+ 					ng-model="fullname" type="text" placeholder="username"></form:input>
+					
+				</div>
+				<em ng-if="frm.fullname.$invalid" class="text-danger h6">Nhập
+					tên họ tên từ 2 đến 30 ký tự</em>
+
+				<div class="controll">
+						<form:input path="password" ng-model="pass" name="pass" minlength="8"
+						type="password" placeholder="Mật khẩu mới"></form:input>
+				</div>
+				<em ng-if="frm.pass.$invalid" class="text-danger h6">Password
+					từ 8 ký tự</em>
+
 				<div class="controll">
 					<input required minlength="2" maxlength="30" name="fullname"
 						ng-model="fullname" type="text" placeholder="Họ tên">
@@ -15,25 +34,19 @@
 					tên họ tên từ 2 đến 30 ký tự</em>
 
 				<div class="controll">
-					<input type="email" required minlength="2" name="dkemail"
-						ng-model="dkemail" placeholder="Nhập email">
+					<form:input path="email" type="email" minlength="2" name="dkemail"
+						ng-model="dkemail" placeholder="Nhập email"></form:input>
 				</div>
 				<em ng-if="frm.dkemail.$invalid" class="text-danger h6">Nhập
 					đúng định dạng email vd: abc@email.com</em>
 
-				<div class="controll">
-					<input ng-model="pass" name="pass" required minlength="8"
-						type="password" placeholder="Mật khẩu mới">
-				</div>
-				<em ng-if="frm.pass.$invalid" class="text-danger h6">Password
-					từ 8 ký tự</em>
 
 				<div>
 					<button type="submit" class="btn btn-danger dangky">Đăng
 						Ký</button>
 
 				</div>
-			</form>
+			</form:form>
 
 			<div class="ghIlRk">
 				<p class="social-heading" style="top: 72px;">
