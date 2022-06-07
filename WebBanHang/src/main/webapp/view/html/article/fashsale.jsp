@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
-<div ng-controller="Salectl"
-	style="margin-top: 10px; position: relative;">
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt"%>
+<div style="margin-top: 10px; position: relative;">
 	<div class="row"
 		style="background: oldlace; padding: 12px; border-bottom: 1px solid rgb(244, 244, 244); display: flex;">
 		<img
@@ -20,46 +21,48 @@
 	<!-- Sản phẩm Sale -->
 	<div class="row items" style="min-height: 50px; background: white;">
 
-		<div class="col-sm-3 hotsp" ng-repeat="sale in saleSP">
-			<a href="" ng-click="insert($index)">
+		<c:forEach var="item" items="${product}">
+			<div class="col-sm-3 hotsp">
+				<a href="/product/sale/${item.id}">
 
-				<div class="sp">
-					<!-- anh -->
-					<div>
-						<img style="margin-top: 3px;" src="img/sach/{{sale.img}}"
-							class="col-sm-12" alt="">
-					</div>
-					<!-- Title -->
-					<h2>
-						<span class="sachtitle">{{sale.title}}</span>
-					</h2>
+					<div class="sp">
+						<!-- anh -->
+						<div>
+							<img style="margin-top: 3px;" src="/view/img/AnhWebBanHang/${item.imgs.get(0).image}" class="col-sm-12"
+								alt="">
+						</div>
+						<!-- Title -->
+						<h2>
+							<span class="sachtitle">${item.name}</span>
+						</h2>
 
-					<!-- Gia -->
-					<div class="salegia">
-						<span
-							style="color: rgba(0, 0, 0, .13); font-size: 16px; text-decoration: line-through;">{{sale.price|number}}đ</span>
-						<span style="color: red;">{{sale.price-(sale.price*sale.sale)|numbers}}
-							<span style="margin-left: -5px; font-size: 16px;">đ</span>
-						</span> <span class="DTL">-{{sale.sale|percentage}} </span>
-					</div>
-					<!-- Thanh sale -->
-					<div class="sale-item__lower-wrapper">
-						<div class="sale-item__lower-left">
-							<div class="sale-progress-bar">
-								<div class="sale-progress-bar__text">Đã bán {{sale.sold}}
-								</div>
-								<div class="sale-progress-bar__complement-wrapper">
-									<!-- Thay đổi -->
-									<div class="sale-progress-bar__complement-sizer"
-										style="width: 50%;" id="thanhgia">
-										<div class="sale-progress-bar__complement-color"></div>
+						<!-- Gia -->
+						<div class="salegia">
+							<span
+								style="color: rgba(0, 0, 0, .13); font-size: 16px; text-decoration: line-through;">${item.price}đ</span>
+							<span style="color: red;">sale <span
+								style="margin-left: -5px; font-size: 16px;">đ</span>
+							</span> <span class="DTL">-% </span>
+						</div>
+						<!-- Thanh sale -->
+						<div class="sale-item__lower-wrapper">
+							<div class="sale-item__lower-left">
+								<div class="sale-progress-bar">
+									<div class="sale-progress-bar__text">Đã bán price</div>
+									<div class="sale-progress-bar__complement-wrapper">
+										<!-- Thay đổi -->
+										<div class="sale-progress-bar__complement-sizer"
+											style="width: 50%;" id="thanhgia">
+											<div class="sale-progress-bar__complement-color"></div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</a>
-		</div>
+				</a>
+			</div>
+		</c:forEach>
+
 	</div>
 </div>

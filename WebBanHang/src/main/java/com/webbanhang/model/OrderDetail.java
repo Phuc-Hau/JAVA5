@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "Orderdetail")
 public class OrderDetail {
 
 	@Id
@@ -32,6 +33,7 @@ public class OrderDetail {
 	@ManyToOne
 	@JoinColumn(name="Product_Id")
 	private Product product;
+
 
 	
 }

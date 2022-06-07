@@ -24,7 +24,7 @@ public class Cutomer {
 
 	private String address;
 
-	private Timestamp birthday;
+	private String birthday;
 
 	private String name;
 

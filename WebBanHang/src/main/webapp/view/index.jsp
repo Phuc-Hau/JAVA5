@@ -13,9 +13,6 @@
   <!-- Angularjs -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
 
-  <!-- Angularjs-route -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-
   <!-- Bootstrap 4 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
@@ -34,7 +31,6 @@
 
   <!-- JS -->
   <script src="/view/js/app.js"></script>
-  <script src="/view/js/angular.js"></script>
 
 
 
@@ -43,9 +39,10 @@
       display: none;
     }
   </style>
+
   
 </head>
-<body ng-app="myapp" style=" background-color: #efefef;" ng-controller="mygiohang">
+<body ng-app="myapp" style=" background-color: #efefef;">
 
 
   <header style="height: 130px;">
@@ -120,7 +117,7 @@
       </div>
       
        
-      <div class="col-sm-5" ng-controller="search">
+      <div class="col-sm-5">
       
      	 <!-- search -->
         <form action="" style="position: absolute;  width: 100%;" >
@@ -335,7 +332,7 @@
       </div>
       
       <!-- body -->
-      <article ng-controller="myindex">
+      <article >
       
         <!--Fash Sale  -->
         	<jsp:include page="/view/html/article/fashsale.jsp"></jsp:include>
@@ -354,12 +351,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
-  <!-- JS -->
-  <script src="/view/js/angular.js" defer></script>
-  <script src="/view/js/app.js"></script>
-  <script src="/view/js/taikhoang.js" defer></script>
-  <script src="/view/js/giohang.js" defer></script>
 
   <!-- simple slick -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" defer>

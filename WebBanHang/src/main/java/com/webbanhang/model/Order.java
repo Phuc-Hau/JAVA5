@@ -27,8 +27,8 @@ public class Order {
 	@Column(name="Status")
 	private int status;
 
-	@Column(name="TotalMoney")
-	private double totalMoney;
+	@Column(name="Totalmoney")
+	private double totalmoney;
 
 	//bi-directional many-to-one association to OrderDetail
 	@OneToMany(mappedBy="order")
