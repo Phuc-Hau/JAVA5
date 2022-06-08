@@ -1,5 +1,7 @@
 package com.webbanhang.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,20 +24,11 @@ public class SignUpController {
 	@Autowired
 	CutomerDao cutomerDao;
 	
-	@PostMapping("signup")
+	@RequestMapping("signup")
 	public String showForm(@RequestParam("fullname") String fullname, @ModelAttribute("user") User user) {
 		
-		Cutomer cutomer = new Cutomer();
-		//cutomer.setId(7);
-		user.setRule(1);
-		user.setStatus(true);
-		user.setCutomer(cutomer);
-		
-		try {
-			userDao.save(user);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		List<User> s = userDao.findAll();
+		System.out.println(s.get(0).getId());
 		
 		return "index";
 	}
