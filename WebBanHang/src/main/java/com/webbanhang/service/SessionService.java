@@ -1,4 +1,4 @@
-package com.webbanhang.untity;
+package com.webbanhang.service;
 
 import javax.servlet.http.HttpSession;
 
