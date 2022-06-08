@@ -1,5 +1,6 @@
-
-<div class="row">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<div class="row" style="margin-top: 23px;background-color: white;border-top: 6px solid orangered;">
     <div class="col-sm-1"></div>
 
         <div class="col-sm-2">
@@ -68,7 +69,7 @@
                 linkedin
               </a>
             </p>
-            <img src="img/qr.png" style="width: 150px; ">
+            <img src="/view/img/qr.png" style="width: 150px; ">
         </div>
         <div class="col-sm-2">
           

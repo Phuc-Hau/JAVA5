@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +12,6 @@
  
   <!-- Angularjs -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
-
-  <!-- Angularjs-route -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 
   <!-- Bootstrap 4 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
@@ -26,11 +27,10 @@
 
 
   <!-- CSS -->
-  <link rel="stylesheet" href="CSS/sach.css">
+  <link rel="stylesheet" href="/view/css/sach.css">
 
   <!-- JS -->
-  <script src="js/app.js"></script>
-  <script src="js/angular.js"></script>
+  <script src="/view/js/app.js"></script>
 
 
 
@@ -39,11 +39,15 @@
       display: none;
     }
   </style>
+
+  
 </head>
-<body ng-app="myapp" style=" background-color: #efefef;" ng-controller="mygiohang">
+<body ng-app="myapp" style=" background-color: #efefef;">
 
 
   <header style="height: 130px;">
+  
+  	   <!-- tren cung -->
     <div class="row">
       <div class="col-sm-3"></div>
       <div class="col-sm-1">
@@ -80,10 +84,13 @@
         </a>
       </div>
     </div>
+    
+      
     <div class="row">
+    
       <div class="col-sm-3 row" style="top: -20px;">
         <div class="col-sm-9">
-          <img src="IMG/logo.gif" alt="" style="position: absolute; width: 195px;  margin-left: 35px;">
+          <img src="/view/img/logo.gif" alt="" style="position: absolute; width: 195px;  margin-left: 35px;">
         </div>
         <div class="col-sm-3 menu" style="top: 40px;">
           <div onmouseover="hienthi()" onmouseout="an()" style="height: 72px; width: 97px; padding: 3px;">
@@ -101,14 +108,18 @@
             </div>
 
             <!-- nav -->
-            <div style="display:none;" ng-include="'html/nav/nav.html'" onmouseout="an()" id="danhmucsp">
-
+            <div style="display:none;" onmouseout="an()" id="danhmucsp">
+				<jsp:include page="/view/html/nav/nav.jsp"></jsp:include>
             </div>
           </div>
           <div id="danhmucspkp" style="display: none;" class="fhs_dropdown_cover"></div>
         </div>
       </div>
-      <div class="col-sm-5" ng-controller="search">
+      
+       
+      <div class="col-sm-5">
+      
+     	 <!-- search -->
         <form action="" style="position: absolute;  width: 100%;" >
           <input type="text" ng-model="searchSP" class="ser" placeholder="Tìm kiếm sản phẩm mong muốn...">
           
@@ -129,6 +140,8 @@
           </div>
         </form>
 
+
+		
         <div class="modal fade" id="sear" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -137,7 +150,7 @@
                 <div style="max-height: 612px; overflow: auto;">
                   <div style="margin-bottom: 10px; display: flex;" class="gh">
 
-                    <div><img src="img/sach/{{ser.img}}" alt="" height="100px"></div>
+                    <div><img src="/view/img/sach/{{ser.img}}" alt="" height="100px"></div>
                     <div class="ghtitle">{{ser.title}}</div>
                     <div style="margin-top: 14px; color: red; font-weight: bolder; width: 90px;">
                       {{ser.price|numbers:3}}đ</div>
@@ -152,11 +165,13 @@
           </div>
 
       </div>
+      
+      
       <div class="col-sm-4 row" style="top: -32px;">
 
-
+			<!-- account -->
         <div class="col-sm-3">
-          <a href="#" data-toggle="modal" data-target="#exampleModal">
+          <a href="#" data-toggle="modal" data-target="#account">
             <div class="gio">
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person"
                 viewBox="0 0 16 16">
@@ -168,6 +183,7 @@
           </a>
         </div>
 
+			<!-- Thong bao -->
         <div class="col-sm-3">
           <a href="#">
             <div class="gio">
@@ -182,7 +198,7 @@
           </a>
         </div>
 
-
+			<!-- cart -->
         <div class="col-sm-3 dropleft">
 
           <a href="#" class="gio dropdown-toggle" data-toggle="modal" data-target="#gh">
@@ -207,7 +223,7 @@
                     <div style="margin-bottom: 10px; display: flex;" class="gh">
                       <div><input ng-model="gh.buy" type="checkbox"
                           style="width: 29px;height: 18px;margin-left: -4%; margin-top: 63%;"></div>
-                      <div><img src="img/sach/{{gh.img}}" alt="" height="50px"></div>
+                      <div><img src="/view/img/sach/{{gh.img}}" alt="" height="50px"></div>
                       <div class="ghtitle">{{gh.title}}</div>
                       <div style="margin-top: 14px; color: red; font-weight: bolder; width: 90px;">
                         {{gh.price|numbers:3}}đ</div>
@@ -241,9 +257,8 @@
         </div>
 
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="account" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
-
 
           <div style="margin-top: 60px;" class="modal-dialog" role="document">
 
@@ -257,137 +272,15 @@
                   <button class="nav-item nav-link col-sm-6 " id="nav-home-tab" data-toggle="tab" href="#nav-home"
                     role="tab" aria-controls="nav-home" aria-selected="true">Đăng Ký</button>
                 </div>
-
-                <div class="tab-pane fade " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                  <div class="row ">
-                    <div ng-controller="mydk" class="col-sm-7 " style="min-height: 50px;">
-                      <h2>Xin Chào </h2>
-                      <form action="" style="padding: 0 30px;" name="frm" class="frm">
-                        <div class="controll">
-                          <input required minlength="2" maxlength="30" name="fullname" ng-model="fullname" type="text"
-                            placeholder="Họ tên">
-                        </div>
-                        <em ng-if="frm.fullname.$invalid" class="text-danger h6">Nhập tên họ tên từ 2 đến 30 ký
-                          tự</em>
-
-                        <div class="controll">
-                          <input type="email" required minlength="2" name="dkemail" ng-model="dkemail"
-                            placeholder="Nhập email">
-                        </div>
-                        <em ng-if="frm.dkemail.$invalid" class="text-danger h6">Nhập đúng định dạng email vd:
-                          abc@email.com</em>
-
-                        <div class="controll">
-                          <input ng-model="pass" name="pass" required minlength="8" type="password"
-                            placeholder="Mật khẩu mới">
-                        </div>
-                        <em ng-if="frm.pass.$invalid" class="text-danger h6">Password từ 8 ký tự</em>
-
-                        <div>
-                          <button type="submit" class="btn btn-danger dangky">Đăng Ký</button>
-
-                        </div>
-                      </form>
-
-                      <div class="ghIlRk">
-                        <p class="social-heading" style="top:72px;">
-                          <span style="position: relative; top: -12px; background: white;">
-                            Hoặc tiếp tục bằng</span>
-                        </p>
-                      </div>
-                      <div class="theo">
-                        <svg xmlns="http://www.w3.org/2000/svg" style="color: #0d6efd;" width="56" height="56"
-                          fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                          <path
-                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" style="margin: 0 20px;color: #dd4b39;" width="56"
-                          height="56" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
-                          <path
-                            d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" style="color: #55acee;" width="56" height="56"
-                          fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-                          <path
-                            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                        </svg>
-                        <p style="    margin-top: 21px;" class="note">Bằng việc tiếp tục, bạn đã chấp nhận <a
-                            style="    text-decoration: underline;color: black;" href="">điều khoản sử dụng</a></p>
-                      </div>
-
-                    </div>
-                    <div class="col-sm-5"
-                      style="min-height: 50px; border-bottom-right-radius: 30px;    background: linear-gradient(136deg, rgb(240, 248, 255) -1%, rgb(219, 238, 255) 85%);">
-                      <img src="img/3145.jpg_wh860.jpg" alt="" style="border-bottom-right-radius: 30px;">
-                    </div>
-                  </div>
-
-
-                </div>
-                <div class="tab-pane fade show active" id="nav-profile" role="tabpanel"
-                  aria-labelledby="nav-profile-tab">
-                  <div class="row ">
-                    <div ng-controller="mydn" class="col-sm-7 " style="min-height: 50px;">
-                      <h2>Xin Chào</h2>
-                      <form action="" ng-submit="register()" novalidate style="padding: 0 30px;" name="frmn"
-                        class="frm">
-
-                        <div class="controll">
-                          <input type="email" required minlength="2" name="dnemail" ng-model="dnemail"
-                            placeholder="Nhập email">
-                        </div>
-                        <em ng-if="frmn.dnemail.$invalid" class="text-danger h6">Nhập đúng định dạng email vd:
-                          abc@email.com</em>
-
-                        <div class="controll">
-                          <input ng-model="pass" name="pass" type="password" placeholder="Mật khẩu">
-                        </div>
-                        <em ng-if="frmn.pass.$invalid" class="text-danger h6">Password từ 8 ký tự</em>
-
-                        <div>
-                          <button type="submit" class="btn btn-danger dangky">Đăng Nhập</button>
-
-                        </div>
-                      </form>
-                      <div class="ghIlRk">
-                        <p class="social-heading"><span style="position: relative; top: -12px; background: white;">Hoặc
-                            tiếp
-                            tục bằng</span></p>
-                      </div>
-                      <div class="theo" style="top: 110px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" style="color: #0d6efd;" width="56" height="56"
-                          fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                          <path
-                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" style="margin: 0 20px;color: #dd4b39;" width="56"
-                          height="56" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
-                          <path
-                            d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" style="color: #55acee;" width="56" height="56"
-                          fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-                          <path
-                            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                        </svg>
-                        <p style="    margin-top: 21px;" class="note">Bằng việc tiếp tục, bạn đã chấp nhận <a
-                            style="    text-decoration: underline;color: black;" href="">điều khoản sử dụng</a></p>
-                      </div>
-
-                    </div>
-                    <div class="col-sm-5"
-                      style="min-height: 50px; border-bottom-right-radius: 30px;    background: linear-gradient(136deg, rgb(240, 248, 255) -1%, rgb(219, 238, 255) 85%);">
-                      <img src="img/3145.jpg_wh860.jpg" alt="" style="border-bottom-right-radius: 30px;">
-                    </div>
-                  </div>
-                </div>
-
+				<!-- Sign up -->
+              		<jsp:include page="/view/html/signup.jsp"></jsp:include>
+               	<!-- sign in -->
+               		<jsp:include page="/view/html/signin.jsp"></jsp:include>
               </div>
-
+              
               <a aria-hidden="true" href="#" class="close" data-dismiss="modal" aria-label="Close">
                 x
               </a>
-
 
             </div>
           </div>
@@ -399,7 +292,7 @@
             aria-controls="collapseExample">
             <div class="gio lan">
               <div>
-                <img src="IMG/VN.gif" alt="" style="width: 45px; position: absolute; top: 10px; left: 11px;">
+                <img src="/view/img/VN.gif" alt="" style="width: 45px; position: absolute; top: 10px; left: 11px;">
               </div>
               <svg style="    position: absolute;  right: 5px;  top: 10; top: 16px;" xmlns="http://www.w3.org/2000/svg"
                 width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -415,11 +308,10 @@
                 background-color: #F2F4F5;
                 border-radius: 5px;
                 padding: 4px;">
-                <img src="IMG/VN.gif" alt="" style="width: 45px; top: 10px; left: 11px;">
+                <img src="/view/img/VN.gif" alt="" style="width: 45px; top: 10px; left: 11px;">
                 VN
               </div>
               <div class=" language" style="border-radius: 5px;padding: 4px;">
-                <img src="IMG/English.gif" alt="" style="width: 45px; top: 10px; left: 11px;">
                 UK
               </div>
             </div>
@@ -434,116 +326,18 @@
   <article>
     <div style="padding: 0px 148px;">
       <div class="row">
-        <!-- Show left-->
-        <div class="col-sm-9">
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="IMG/show1.jpg" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="IMG/show3.jpg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="IMG/show4.jpg" alt="Third slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="IMG/show5.jpg" alt="Third slide">
-              </div>
-            </div>
-
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-        <!-- Show Right -->
-        <div class="col-sm-3">
-          <div>
-            <img src="IMG/sachhow1.jpg" style="object-fit: cover; max-height: 174px; width: 100%!important;" alt="">
-          </div>
-          <div style="margin-top: 5px;">
-
-            <img src="IMG/sachhow2.jpg" style="object-fit: cover; max-height: 174px; width: 100%!important;;" alt="">
-          </div>
-
-        </div>
+        <!-- slideshow-->
+        	<jsp:include page="/view/html/slideshow.jsp"></jsp:include>
+        	
       </div>
+      
       <!-- body -->
-      <article ng-controller="myindex">
+      <article >
+      
         <!--Fash Sale  -->
-
-        <div ng-controller="Salectl" style="margin-top: 10px; position: relative;">
-          <div class="row"
-            style="background: oldlace; padding: 12px; border-bottom: 1px solid rgb(244, 244, 244);    display: flex;">
-            <img src="https://frontend.tikicdn.com/_desktop-next/static/img/giasoc.svg" alt="flash deal">
-            <img width="21" src="https://frontend.tikicdn.com/_desktop-next/static/img/dealFlashIcon.svg"
-              alt="flash deal">
-            <img src="https://frontend.tikicdn.com/_desktop-next/static/img/homnay.svg" alt="flash deal">
-            <div class="ccRlPb" style="position: absolute;  right: 10px;">
-              <span>01</span>:
-              <span class="min">32</span>:
-              <span>09</span>
-            </div>
-          </div>
-
-          <!-- Sản phẩm Sale -->
-          <div class="row items" style="  min-height: 50px; background: white;">
-
-            <div class="col-sm-3 hotsp" ng-repeat="sale in saleSP">
-              <a href="" ng-click="insert($index)">
-
-                <div class="sp">
-                  <!-- anh -->
-                  <div>
-                    <img style="margin-top: 3px;" src="IMG/sach/{{sale.img}}" class="col-sm-12" alt="">
-                  </div>
-                  <!-- Title -->
-                  <h2>
-                    <span class="sachtitle">{{sale.title}}</span>
-                  </h2>
-
-                  <!-- Gia -->
-                  <div class="salegia">
-                    <span
-                      style="color: rgba(0,0,0,.13); font-size: 16px; text-decoration: line-through;">{{sale.price|number}}đ</span>
-                    <span style="color: red;">{{sale.price-(sale.price*sale.sale)|numbers}} <span
-                        style="margin-left: -5px;font-size: 16px;">đ</span></span>
-                    <span class="DTL">-{{sale.sale|percentage}} </span>
-                  </div>
-                  <!-- Thanh sale -->
-                  <div class="sale-item__lower-wrapper">
-                    <div class="sale-item__lower-left">
-                      <div class="sale-progress-bar">
-                        <div class="sale-progress-bar__text">Đã bán {{sale.sold}} </div>
-                        <div class="sale-progress-bar__complement-wrapper">
-                          <!-- Thay đổi -->
-                          <div class="sale-progress-bar__complement-sizer" style="width: 50%;" id="thanhgia">
-                            <div class="sale-progress-bar__complement-color"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
+        	<jsp:include page="/view/html/article/fashsale.jsp"></jsp:include>
         <!-- Xu hướng mua sắm -->
-        <div ng-include="'html/article/xuhuong.html'"></div>
+        	<jsp:include page="/view/html/article/xuhuong.jsp"></jsp:include>
 
       </article>
     </div>
@@ -551,23 +345,17 @@
 
 
   <!-- footer -->
-  <footer ng-include=" 'html/footer.html' " style="background: white; border-top: 5px solid red; margin-top: 36px;">
-  </footer>
+  <jsp:include page="/view/html/footer.jsp"></jsp:include>
+ 
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-  <!-- JS -->
-  <script src="js/angular.js" defer></script>
-  <script src="js/app.js"></script>
-  <script src="js/taikhoang.js" defer></script>
-  <script src="js/giohang.js" defer></script>
-
   <!-- simple slick -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" defer>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" defer>
-  <script src="js/Slick/slick.min.js" defer></script>
+  <script src="/view/js/Slick/slick.min.js" defer></script>
 
 </body>
 
