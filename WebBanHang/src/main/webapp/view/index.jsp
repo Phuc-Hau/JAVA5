@@ -107,10 +107,6 @@
               </svg>
             </div>
 
-            <!-- nav -->
-            <div style="display:none;" onmouseout="an()" id="danhmucsp">
-				<jsp:include page="/view/html/nav/nav.jsp"></jsp:include>
-            </div>
           </div>
           <div id="danhmucspkp" style="display: none;" class="fhs_dropdown_cover"></div>
         </div>
@@ -170,18 +166,29 @@
       <div class="col-sm-4 row" style="top: -32px;">
 
 			<!-- account -->
-        <div class="col-sm-3">
-          <a href="#" data-toggle="modal" data-target="#account">
+        <div class="col-sm-3" class="dropdown">
+          
             <div class="gio">
+            <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person"
                 viewBox="0 0 16 16">
                 <path
                   d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
               </svg>
               <div style="margin-top: 8px;color: white;">Tài Khoản</div>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              	<a class="dropdown-item" href="#">Admin</a>
+			    <a class="dropdown-item" href="#">Đăng ký</a>
+			    <a class="dropdown-item" href="#">Đăng nhập</a>
+			    <a class="dropdown-item" href="#">Đổi mật khẩu</a>
+			    <a class="dropdown-item" href="#">Quên mật khẩu</a>
+			  </div>
+               </a>
             </div>
-          </a>
+            
         </div>
+        
+
 
 			<!-- Thong bao -->
         <div class="col-sm-3">
@@ -197,6 +204,7 @@
             </div>
           </a>
         </div>
+
 
 			<!-- cart -->
         <div class="col-sm-3 dropleft">
@@ -257,31 +265,7 @@
         </div>
 
 
-        <div class="modal fade" id="account" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
-
-          <div style="margin-top: 60px;" class="modal-dialog" role="document">
-
-            <div class="modal-content" style="border-radius: 30px;">
-
-              <div class="tab-content" id="nav-tabContent" style="width: 100%;">
-                <div style="    position: absolute;  z-index: 99;   width: 58.7%;     left: 15px;top: 44px;"
-                  class="row nav nav-tabs" id="nav-tab" role="tablist">
-                  <button class="nav-item nav-link active col-sm-6" id="nav-profile-tab" data-toggle="tab"
-                    href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Đăng Nhâp</button>
-                  <button class="nav-item nav-link col-sm-6 " id="nav-home-tab" data-toggle="tab" href="#nav-home"
-                    role="tab" aria-controls="nav-home" aria-selected="true">Đăng Ký</button>
-                </div>
-				
-              </div>
-              
-              <a aria-hidden="true" href="#" class="close" data-dismiss="modal" aria-label="Close">
-                x
-              </a>
-
-            </div>
-          </div>
-        </div>
+      
 
 
         <div class="col-sm-3">
