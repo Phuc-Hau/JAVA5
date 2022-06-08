@@ -272,10 +272,7 @@
                   <button class="nav-item nav-link col-sm-6 " id="nav-home-tab" data-toggle="tab" href="#nav-home"
                     role="tab" aria-controls="nav-home" aria-selected="true">Đăng Ký</button>
                 </div>
-				<!-- Sign up -->
-              		<jsp:include page="/view/html/signup.jsp"></jsp:include>
-               	<!-- sign in -->
-               		<jsp:include page="/view/html/signin.jsp"></jsp:include>
+				
               </div>
               
               <a aria-hidden="true" href="#" class="close" data-dismiss="modal" aria-label="Close">
