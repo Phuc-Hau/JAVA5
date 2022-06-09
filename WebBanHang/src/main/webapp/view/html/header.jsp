@@ -47,7 +47,9 @@
     
       <div class="col-sm-3 row" style="top: -20px;">
         <div class="col-sm-9">
-          <img src="/view/img/logo.gif" alt="" style="position: absolute; width: 195px;  margin-left: 35px;">
+       		 <a href="/product/index">
+          		<img src="/view/img/logo.gif" alt="" style="position: absolute; width: 195px;  margin-left: 35px;">
+       		 </a>
         </div>
         <div class="col-sm-3 menu" style="top: 40px;">
           <div onmouseover="hienthi()" onmouseout="an()" style="height: 72px; width: 97px; padding: 3px;">
