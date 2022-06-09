@@ -58,7 +58,7 @@ public class ForgetPassController {
 	}
 
 	@PostMapping("/datpassword")
-	public String datpass(Model model, @RequestParam("capcha") int capcha) {
+	public String datpass(Model model, @RequestParam("capcha") String capcha) {
 		if (capChas.equals(capcha)) {
 			model.addAttribute("message", "");
 			return "forgetpass/datpass";
