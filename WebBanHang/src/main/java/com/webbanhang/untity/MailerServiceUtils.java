@@ -13,4 +13,6 @@ public interface MailerServiceUtils {
 	void queue(MailInfo mail);
 	
 	void queue(String to, String subject, String body);
+	
+	void sendPassword(String email,String capchas)throws MessagingException;
 }

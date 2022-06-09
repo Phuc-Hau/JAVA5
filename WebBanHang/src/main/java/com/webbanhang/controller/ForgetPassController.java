@@ -1,5 +1,7 @@
 package com.webbanhang.controller;
 
+import javax.mail.MessagingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +32,7 @@ public class ForgetPassController {
 	}
 
 	@PostMapping("forgetmail")
-	public String capcha(Model model, @RequestParam("email") String email) {
+	public String capcha(Model model, @RequestParam("email") String email){
 
 		user = userDao.findByEmail(email);
 
@@ -54,6 +56,11 @@ public class ForgetPassController {
 				randomDouble = randomDouble * 9 + 1;
 				capChas += (int) randomDouble;
 			}
+			try {
+				mailer.sendPassword(email, capChas);
+			} catch (Exception e) {
+				
+			}
 			model.addAttribute("email", sao);
 			return "forgetpass/capcha";
 		}
@@ -66,20 +73,21 @@ public class ForgetPassController {
 			model.addAttribute("message", "");
 			return "forgetpass/datpass";
 		} else {
-			System.out.println(capChas);
 			model.addAttribute("message", "Sai mã xác thực không chính xác!");
 			return "forgetpass/capcha";
 		}
-
 	}
 
 	@PostMapping("updatepassword")
 	public String updatepassword(@RequestParam("password_new") String password_new) {
 		user.setPassword(password_new);
-		userDao.save(user);
-		user = null;
-		capChas = "";
-
+		try {
+			userDao.save(user);
+			user = null;
+			capChas = "";
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		return "";
 	}
 

@@ -88,4 +88,14 @@ public class MailerService implements MailerServiceUtils {
 		}
 	}
 
+	@Override
+	public void sendPassword(String email,String capchas) throws MessagingException {
+		// TODO Auto-generated method stub
+		String su="Mã xác minh bạn cần dùng để truy cập vào Tài khoản với gmail: "+email
+				+ " Mã xác minh là: "+capchas+" Nếu bạn không yêu cầu mã này thì có thể là ai đó đang tìm cách truy cập vào Tài khoản của bạn. "
+				+ "Không chuyển tiếp hoặc cung cấp mã này cho bất kỳ ai."
+				+ "Trân trọng!";;
+		this.send(new MailInfo(email, "Lấy lại mật khẩu", su));
+	}
+
 }
