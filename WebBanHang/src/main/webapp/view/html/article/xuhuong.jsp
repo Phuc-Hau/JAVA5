@@ -25,9 +25,8 @@
 					</h2> <!-- Gia -->
 					<div class="xuhuong">
 						<span style="color: red;">${item.price}<span
-							style="font-size: 16px;">Ä‘</span></span> <span
-							style="text-align: right; font-size: 11px;">Ä�Ă£ bĂ¡n
-							{{}}</span>
+							style="font-size: 16px;">đ</span></span> <span
+							style="text-align: right; font-size: 11px;">đã bán 1k2</span>
 					</div>
 				</a>
 			</div>

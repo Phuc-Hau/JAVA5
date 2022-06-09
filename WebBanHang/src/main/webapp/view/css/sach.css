@@ -237,7 +237,7 @@ a:hover {
 
 .sale-progress-bar__complement-wrapper {
     width: 100%;
-    background: transparent;
+    background: #87afac6b;;
     overflow: hidden;
     bottom: 0;
     right: 0;
@@ -251,7 +251,7 @@ a:hover {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #ffbda6;
+    background: #ff632d;
 }
 
 .sale-progress-bar__complement-sizer {
@@ -593,3 +593,6 @@ body div #dropdown-menu {
     content: none;
 }
 
+.asale:hover {
+	opacity: 1;
+}

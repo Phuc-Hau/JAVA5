@@ -23,7 +23,7 @@
 
 		<c:forEach var="item" items="${product}">
 			<div class="col-sm-3 hotsp">
-				<a href="/product/sale/${item.id}">
+				<a class="asale" href="/product/sale/${item.id}">
 
 					<div class="sp">
 						<!-- anh -->

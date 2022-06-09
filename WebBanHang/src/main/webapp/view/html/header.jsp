@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
     
-  <header style="height: 130px;">
+  <header style="height: 130px; ">
   
   	   <!-- tren cung -->
     <div class="row">
