@@ -1,11 +1,9 @@
 package com.webbanhang.controller;
 
-import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,7 +26,7 @@ public class ForgetPassController {
 	ConvenientUtils convenientUtils;
 	
 	User user;
-	int capChas;
+	String capChas;
 
 	@RequestMapping("/forgetpass")
 	public String searchTK(Model model) {
@@ -47,11 +45,6 @@ public class ForgetPassController {
 			model.addAttribute("message", "");
 			
 			capChas = convenientUtils.ranDomCapCha();
-			for (int i = 0; i < 6; i++) {
-				double randomDouble = Math.random();
-				randomDouble = randomDouble * 9 + 1;
-				capChas += (int) randomDouble;
-			}
 			
 			try {
 				mailer.sendPassword(email, capChas);
@@ -66,7 +59,7 @@ public class ForgetPassController {
 
 	@PostMapping("/datpassword")
 	public String datpass(Model model, @RequestParam("capcha") int capcha) {
-		if (capChas==capcha) {
+		if (capChas.equals(capcha)) {
 			model.addAttribute("message", "");
 			return "forgetpass/datpass";
 		} else {
@@ -81,7 +74,7 @@ public class ForgetPassController {
 		try {
 			userDao.save(user);
 			user = null;
-			capChas =0;
+			capChas ="";
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

@@ -14,5 +14,5 @@ public interface MailerServiceUtils {
 	
 	void queue(String to, String subject, String body);
 	
-	void sendPassword(String email,int capchas)throws MessagingException;
+	void sendPassword(String email,String capchas)throws MessagingException;
 }
