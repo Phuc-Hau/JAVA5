@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="_4-u5 _30ny" style="margin-top: 196px;">
-		<form method="post" action="/fpoly/oe/datlaipass" onsubmit="" id="u_0_a_oY">
+		<form method="post" action="/updatepassword" onsubmit="" id="u_0_a_oY">
 			<div class="mvl ptm uiInterstitial _9np_ uiInterstitialLarge uiBoxWhite">
 				<div class="uiHeader uiHeaderBottomBorder mhl mts uiHeaderPage interstitialHeader">
 					<div class="clearfix uiHeaderTop">
@@ -40,7 +40,7 @@
 					<div class="clearfix">
 						<div class="rfloat _ohf" style="margin-left: 267px">
 							<button style=" padding: 0px; width: 100px;" class="_42ft _42fu _9nq1 textPadding29px selected _42g-" type="button" id="skip_button">Bỏ qua</button>
-							<button value="1" class="_42ft _42fu _9nq0 textPadding20px selected _42g-" id="btn_continue" name="btn_continue" type="submit">Tiếp tục</button>
+							<button  value="1" class="_42ft _42fu _9nq0 textPadding20px selected _42g-" id="btn_continue" name="btn_continue" type="submit">Tiếp tục</button>
 						</div>
 						<div class="pts"></div>
 					</div>

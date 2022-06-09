@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="_4-u5 _30ny" style="margin-top: 196px;">
-		<form method="post" action="../oe/datpass" onsubmit="" id="u_0_a_10">
+		<form method="post" action="/datpassword" onsubmit="" id="u_0_a_10">
 			
 			<div class="mvl ptm uiInterstitial _9np_ uiInterstitialLarge uiBoxWhite">
 				<div class="uiHeader uiHeaderBottomBorder mhl mts uiHeaderPage interstitialHeader">
@@ -32,12 +32,12 @@
 							<div class="_9o1y"><div>${email}</div></div>
 						</div>
 					</div>
-					<div class="mvm"></div>
+					<div class="mvm" style="color: red;">${message }</div>
 				</div>
 				<div class="hu uiInterstitialBar uiBoxGray topborder" style="margin-bottom: 11px; margin-bottom: 19px;">
 					<div class="clearfix uu">
 							<div class="rfloat _ohf">
-								<a role="button" class="_42ft _4jy0 _9nq1 textPadding20px _4jy3 _517h _51sy" name="reset_action" href="../oe/index">Hủy</a>
+								<a role="button" class="_42ft _4jy0 _9nq1 textPadding20px _4jy3 _517h _51sy" name="reset_action" href="/product/index">Hủy</a>
 								<button  value="1" class="_42ft _4jy0 _9nq0 textPadding20px _4jy3 _4jy1 selected _51sy" name="reset_action" type="submit">Tiếp tục</button>
 							</div>
 							<div class="pts" style="height: 30px;margin-top: -34px; margin-left: 10px"><a class="_9o1v" >Bạn chưa có mã?</a>
