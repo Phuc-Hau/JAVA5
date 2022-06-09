@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.webbanhang.impl.UserDao;
 import com.webbanhang.model.User;
-import com.webbanhang.untity.MailerServiceUtils;
+import com.webbanhang.utils.MailerServiceUtils;
 
 @Controller
 public class ForgetPassController {
@@ -41,27 +41,20 @@ public class ForgetPassController {
 			return "forgetpass/timtk";
 		} else {
 			model.addAttribute("message", "");
-			String sao = String.valueOf(email.charAt(0));
-			int u = email.indexOf("@") - 1;
-			for (int i = 0; i < email.length(); i++) {
-				if (i >= u) {
-					sao += String.valueOf(email.charAt(i));
-				} else
-					sao += "*";
-			}
-
+			
 			capChas = "";
 			for (int i = 0; i < 6; i++) {
 				double randomDouble = Math.random();
 				randomDouble = randomDouble * 9 + 1;
 				capChas += (int) randomDouble;
 			}
+			
 			try {
 				mailer.sendPassword(email, capChas);
 			} catch (Exception e) {
 				
 			}
-			model.addAttribute("email", sao);
+			model.addAttribute("email", emailToStar(email));
 			return "forgetpass/capcha";
 		}
 
@@ -91,4 +84,16 @@ public class ForgetPassController {
 		return "";
 	}
 
+	public String emailToStar(String star) {
+		String sao = String.valueOf(star.charAt(0));
+		int u = star.indexOf("@") - 1;
+		for (int i = 0; i < star.length(); i++) {
+			if (i >= u) {
+				sao += String.valueOf(star.charAt(i));
+			} else
+				sao += "*";
+		}
+		
+		return sao;
+	}
 }

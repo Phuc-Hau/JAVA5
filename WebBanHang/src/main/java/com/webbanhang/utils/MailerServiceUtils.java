@@ -1,4 +1,4 @@
-package com.webbanhang.untity;
+package com.webbanhang.utils;
 
 import javax.mail.MessagingException;
 

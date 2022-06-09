@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.webbanhang.model.MailInfo;
-import com.webbanhang.untity.*;
+import com.webbanhang.utils.*;
 
 @Service
 public class MailerService implements MailerServiceUtils {
