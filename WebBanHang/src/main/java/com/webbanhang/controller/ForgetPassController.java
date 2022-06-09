@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.webbanhang.impl.UserDao;
 import com.webbanhang.model.User;
+import com.webbanhang.utils.ConvenientUtils;
 import com.webbanhang.utils.MailerServiceUtils;
 
 @Controller
@@ -23,8 +24,11 @@ public class ForgetPassController {
 	@Autowired
 	MailerServiceUtils mailer;
 
+	@Autowired
+	ConvenientUtils convenientUtils;
+	
 	User user;
-	String capChas;
+	int capChas;
 
 	@RequestMapping("/forgetpass")
 	public String searchTK(Model model) {
@@ -42,7 +46,7 @@ public class ForgetPassController {
 		} else {
 			model.addAttribute("message", "");
 			
-			capChas = "";
+			capChas = convenientUtils.ranDomCapCha();
 			for (int i = 0; i < 6; i++) {
 				double randomDouble = Math.random();
 				randomDouble = randomDouble * 9 + 1;
@@ -54,15 +58,15 @@ public class ForgetPassController {
 			} catch (Exception e) {
 				
 			}
-			model.addAttribute("email", emailToStar(email));
+			model.addAttribute("email", convenientUtils.emailToStar(email));
 			return "forgetpass/capcha";
 		}
 
 	}
 
 	@PostMapping("/datpassword")
-	public String datpass(Model model, @RequestParam("capcha") String capcha) {
-		if (capChas.equals(capcha)) {
+	public String datpass(Model model, @RequestParam("capcha") int capcha) {
+		if (capChas==capcha) {
 			model.addAttribute("message", "");
 			return "forgetpass/datpass";
 		} else {
@@ -77,23 +81,12 @@ public class ForgetPassController {
 		try {
 			userDao.save(user);
 			user = null;
-			capChas = "";
+			capChas =0;
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 		return "";
 	}
 
-	public String emailToStar(String star) {
-		String sao = String.valueOf(star.charAt(0));
-		int u = star.indexOf("@") - 1;
-		for (int i = 0; i < star.length(); i++) {
-			if (i >= u) {
-				sao += String.valueOf(star.charAt(i));
-			} else
-				sao += "*";
-		}
-		
-		return sao;
-	}
+	
 }
