@@ -146,11 +146,11 @@
 					</div>
 
 
-					<button type="button"
+					<button type="submit" formaction="/admin/user/update/"
 						class="btn btn-gradient-success btn-rounded btn-fw">
 						<i class="mdi mdi-content-save"></i>Update
 					</button>
-					<button type="button"
+					<button type="submit" formaction="/admin/user/delete/"
 						class="btn btn-gradient-danger btn-rounded btn-fw">
 						<i class="mdi mdi-delete-forever"></i>Delete
 					</button>

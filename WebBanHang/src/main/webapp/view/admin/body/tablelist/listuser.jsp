@@ -32,9 +32,10 @@
                 </tr>
               </thead>
               <tbody>
+              <c:set var = "count" scope = "session" value = "1"/>
               <c:forEach var="item" items="${adminlistuser }">
                 <tr>
-                  <td>1</td>
+                  <td>${count}</td>
                   <td class="py-1">
                     <img src="/view/admin/assets/images/faces-clipart/pic-1.png" alt="image" />
                   </td>
@@ -42,12 +43,19 @@
                   <td>
                     ${item.cutomer.name}
                   </td>
-                  <td> May 15, 2015 </td>
-                  <td> Quản Lý </td>
-                  <td> Hoạt Động </td>
-                  <td><a href="">Edit</a> / <a href="">Delete</a></td>
+                  <td> ${item.cutomer.birthday} </td>
+                  <td> ${item.rules} </td>
+                  <td> 
+                  	<c:choose>
+                  		<c:when test="${item.status==true}">Đang hoạt động</c:when>
+                  		<c:otherwise>Đã tắc hoạt động</c:otherwise>
+                  	</c:choose>
+                   </td>
+                  <td><a href="/admin/user/edit/${item.id}">Edit</a> / 
+                  	<a href="/admin/user/delete/${item.id}">Delete</a></td>
                 </tr>
                 <tr>
+                <c:set var = "count" scope = "session" value = "${count+1}"/>
                 </c:forEach>
                
               </tbody>

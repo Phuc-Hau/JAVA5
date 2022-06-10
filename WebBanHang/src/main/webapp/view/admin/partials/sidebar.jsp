@@ -18,7 +18,7 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link" href="/admin/index">
         <span class="menu-title">Dashboard</span>
         <i class="mdi mdi-home menu-icon"></i>
       </a>
@@ -46,6 +46,7 @@
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Danh sách sản phẩm</a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Chỉnh sửa sản phẩm</a></li>
+          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Danh mục sản phẩm</a></li>
         </ul>
       </div>
 
