@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt"%>
 
   <div class="content-wrapper">
     <div class="page-header">
@@ -31,14 +32,15 @@
                 </tr>
               </thead>
               <tbody>
+              <c:forEach var="item" items="${adminlistuser }">
                 <tr>
                   <td>1</td>
                   <td class="py-1">
                     <img src="/view/admin/assets/images/faces-clipart/pic-1.png" alt="image" />
                   </td>
-                  <td> Herman Beck </td>
+                  <td>${item.username}</td>
                   <td>
-                    Name
+                    ${item.cutomer.name}
                   </td>
                   <td> May 15, 2015 </td>
                   <td> Quản Lý </td>
@@ -46,48 +48,8 @@
                   <td><a href="">Edit</a> / <a href="">Delete</a></td>
                 </tr>
                 <tr>
-                  <td>2</td>
-                  <td class="py-1">
-                    <img src="/view/admin/assets/images/faces-clipart/pic-2.png" alt="image" />
-                  </td>
-                  <td> Messsy Adam </td>
-                  <td>
-                    Name
-                  </td>
-                  <td> May 15, 2015 </td>
-                  <td> Quản Lý </td>
-                  <td> Hoạt Động </td>
-                  <td><a href="">Edit</a> / <a href="">Delete</a></td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td class="py-1">
-                    <img src="/view/admin/assets/images/faces-clipart/pic-3.png" alt="image" />
-                  </td>
-                  <td> John Richards </td>
-                  <td>
-                    Name
-                  </td>
-                  <td> May 15, 2015 </td>
-                  <td> Quản Lý </td>
-                  <td> Hoạt Động </td>
-                  <td><a href="">Edit</a> / <a href="">Delete</a></td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td class="py-1">
-                    <img src="/view/admin/assets/images/faces-clipart/pic-4.png" alt="image" />
-                  </td>
-                  <td> Peter Meggik </td>
-                  <td>
-                    Name
-                  </td>
-                  <td> May 15, 2015 </td>
-                  <td> Quản Lý </td>
-                  <td> Hoạt Động </td>
-                  <td><a href="">Edit</a> / <a href="">Delete</a></td>
-                </tr>
-
+                </c:forEach>
+               
               </tbody>
             </table>
           </div>

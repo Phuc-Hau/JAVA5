@@ -31,8 +31,8 @@
       </a>
       <div class="collapse" id="ui-basic">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Danh sách người dùng</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Chỉnh sửa danh sách</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/admin/userlist">Danh sách người dùng</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/admin/useredit">Chỉnh sửa danh sách</a></li>
         </ul>
       </div>
     </li>
