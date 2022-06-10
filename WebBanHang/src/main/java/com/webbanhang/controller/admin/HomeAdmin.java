@@ -10,6 +10,6 @@ public class HomeAdmin {
 	@RequestMapping("/admin/index")
 	public String index() {
 		
-		return "admin/AdminIndex";
+		return "admin/AdminUser";
 	}
 }
