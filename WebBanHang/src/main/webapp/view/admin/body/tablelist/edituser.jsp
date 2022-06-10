@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt"%>
 
 <link rel="stylesheet" href="/view/admin/assets/css/uploatanh.css" />
 
@@ -18,7 +21,11 @@
 		<div class="card">
 			<div class="card-body">
 
-				<form class="form-sample" method="post">
+				<form:form class="form-sample" method="post" modelAttribute="edituser"
+						enctype="multipart/form-data">
+						<form:input path="iduser" type="hidden" />
+						<form:input path="idcutomer" type="hidden" />
+						<form:input path="username" type="hidden"/>
 					<div class="row">
 						<div class="col-md-3">
 
@@ -37,10 +44,7 @@
 										style="margin-top: 25px; margin-left: 26px;" for="upload">Uploat
 										ảnh đại diện</label>
 								</div>
-
-
 							</div>
-
 
 						</div>
 						<div class="col-md-9">
@@ -50,7 +54,7 @@
 									<div class="form-group row">
 										<label class="col-sm-3 col-form-label">User Name</label>
 										<div class="col-sm-9">
-											<input type="text" class="form-control" />
+											<span  class="form-control">${edituser.username}</span>
 										</div>
 									</div>
 								</div>
@@ -58,7 +62,7 @@
 									<div class="form-group row">
 										<label class="col-sm-3 col-form-label">Full Name</label>
 										<div class="col-sm-9">
-											<input type="text" class="form-control" />
+											<form:input path="name" type="text" class="form-control" />
 										</div>
 									</div>
 								</div>
@@ -68,7 +72,7 @@
 									<div class="form-group row">
 										<label class="col-sm-3 col-form-label">Gmail</label>
 										<div class="col-sm-9">
-											<input type="email" class="form-control" />
+											<form:input path="email" type="email" class="form-control" />
 										</div>
 									</div>
 								</div>
@@ -76,7 +80,7 @@
 									<div class="form-group row">
 										<label class="col-sm-3 col-form-label">PassWord</label>
 										<div class="col-sm-9">
-											<input type="password" class="form-control" />
+											<form:input path="password" type="password" class="form-control" />
 										</div>
 									</div>
 								</div>
@@ -86,10 +90,10 @@
 									<div class="form-group row">
 										<label class="col-sm-3 col-form-label">Gender</label>
 										<div class="col-sm-9">
-											<select class="form-control">
-												<option>Male</option>
-												<option>Female</option>
-											</select>
+											<form:select path="procvince" class="form-control">
+												<<form:option value="Male">Male</form:option>
+												<form:option value="Female"> Female</form:option>
+											</form:select>
 										</div>
 									</div>
 								</div>
@@ -97,10 +101,10 @@
 									<div class="form-group row">
 										<label class="col-sm-3 col-form-label">Rule</label>
 										<div class="col-sm-9">
-											<select class="form-control">
-												<option>Admin</option>
-												<option>Người dùng</option>
-											</select>
+										<form:select path="rules" class="form-control">
+											<form:option value="0" >Admin</form:option>
+											<form:option value="1" >Người dùng</form:option>
+										</form:select>
 										</div>
 									</div>
 								</div>
@@ -110,7 +114,7 @@
 									<div class="form-group row">
 										<label class="col-sm-3 col-form-label">Date of Birth</label>
 										<div class="col-sm-9">
-											<input type="date" class="form-control" />
+											<form:input path="birthday" type="date" class="form-control" />
 										</div>
 									</div>
 								</div>
@@ -119,17 +123,20 @@
 										<label class="col-sm-3 col-form-label">Status</label>
 										<div class="col-sm-4">
 											<div class="form-check">
-												<label class="form-check-label"> <input type="radio"
+												<label class="form-check-label"> 
+												<form:radiobutton path="status" checked="checked" 
 													class="form-check-input" name="membershipRadios"
-													id="membershipRadios1" value="" checked> Hoạt Động
+													id="membershipRadios1" value="true" /> Hoạt Động
 												</label>
 											</div>
 										</div>
+										
 										<div class="col-sm-5">
 											<div class="form-check">
-												<label class="form-check-label"> <input type="radio"
+												<label class="form-check-label">
+												 <form:radiobutton path="status" 
 													class="form-check-input" name="membershipRadios"
-													id="membershipRadios2" value="option2"> Tắc hoạt
+													id="membershipRadios2" value="false" /> Tắc hoạt
 													động
 												</label>
 											</div>
@@ -139,7 +146,7 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleTextarea1">Address</label>
-								<textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+								<form:textarea path="address" class="form-control" id="exampleTextarea1" rows="4"/>
 							</div>
 						</div>
 
@@ -162,7 +169,7 @@
 						class="btn btn-gradient-primary btn-rounded btn-fw">
 						<i class="mdi mdi-exit-to-app"></i>
 						Cancel</button>
-				</form>
+				</form:form>
 			</div>
 		</div>
 
