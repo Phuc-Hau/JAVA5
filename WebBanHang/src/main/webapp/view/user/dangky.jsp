@@ -16,14 +16,14 @@
 <body>
 <span style="color: red">${erro}</span><br>
 	<div class="_4-u5 _30ny">
-		<form:form method="post" action="/account/user/dangky" id="u_0_a_oY" modelAttribute="user">
+		<form:form method="post" action="/account/signup/confirm" id="u_0_a_oY" modelAttribute="user">
 			<div class="mvl ptm uiInterstitial _9np_ uiInterstitialLarge uiBoxWhite">
 				<div class="uiHeader uiHeaderBottomBorder mhl mts uiHeaderPage interstitialHeader">
 					<div class="clearfix uiHeaderTop">
 						<div>
 							<h2 class="uiHeaderTitle" aria-hidden="true">Đăng Ký</h2>
 						</div>
-						<div class="_52lr fsm fwn fcg">Nhanh chóng và dễ dàng.</div>
+						<div style="color: red" class="_52lr fsm fwn fcg">${message }</div>
 					</div>
 				</div>
 				<div class="phl ptm uiInterstitialContent">
@@ -38,7 +38,7 @@
 								
 							</div>
 							<div class="_9okt olo">
-								<form:input style="margin-top: 0px; border: none" type="password" class="yu inputtext _55r1 _9oku _9o1w" name="passwordd" placeholder="Password" path="password"></form:input>
+								<form:input style="margin-top: 0px; border: none" type="password" minlength="8" class="yu inputtext _55r1 _9oku _9o1w" name="passwordd" placeholder="Password" path="password"></form:input>
 								
 							</div>
 							<div class="_9okt olo">
