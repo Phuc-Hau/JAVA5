@@ -16,7 +16,7 @@ import com.webbanhang.model.Cutomer;
 import com.webbanhang.model.User;
 
 @Controller
-@RequestMapping("account")
+@RequestMapping("/account")
 public class SignUpController {
 	@Autowired
 	UserDao userDao;
@@ -24,15 +24,34 @@ public class SignUpController {
 	@Autowired
 	CutomerDao cutomerDao;
 	
-	@RequestMapping("signup")
-	public String showForm(@RequestParam("fullname") String fullname, @ModelAttribute("user") User user) {
-		
-		List<User> s = userDao.findAll();
-		System.out.println(s.get(0).getId());
-		
-		return "index";
+	@RequestMapping("/signup")
+	public String showForm(@ModelAttribute("user") User user) {
+		return "user/dangky";
 	}
 	
+	
+	@PostMapping("/user/dangky")
+	public String signup(@ModelAttribute("user") User userT,@RequestParam("fullname") String fullname) {
+		User user = userT;
+		user.setStatus(true);
+		user.setRules(1);
+		Cutomer cutomer = new Cutomer();
+		int id = cutomerDao.getIdFinal()+1;
+		cutomer.setId(id);
+		cutomer.setName(fullname);
+		
+		user.setCutomer(cutomer);
+		try {
+			cutomerDao.save(cutomer);
+			userDao.save(user);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println();
+		
+		return "user/dangky";
+	}
 	
 	
 }
