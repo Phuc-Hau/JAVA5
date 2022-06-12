@@ -15,6 +15,7 @@ import com.webbanhang.model.EditUserAdmin;
 import com.webbanhang.model.User;
 
 @Controller
+@RequestMapping("/admin")
 public class AdminUser {
 	
 	@Autowired
@@ -23,18 +24,18 @@ public class AdminUser {
 	@Autowired
 	CutomerDao cutomerDao;
 
-	@RequestMapping("/admin/userlist")
+	@RequestMapping("/userlist")
 	public String adminUserList(Model model) {
 		model.addAttribute("adminlistuser", userDao.findAll());
 		return "admin/AdminUserList";
 	}
 	
-	@RequestMapping("/admin/useredit")
+	@RequestMapping("/useredit")
 	public String adminUserEdit(@ModelAttribute("edituser") EditUserAdmin edituser) {
 		return "admin/AdminUserEdit";
 	}
 	
-	@RequestMapping("/admin/user/edit/{id}")
+	@RequestMapping("/user/edit/{id}")
 	public String adminUserEditID(Model model,@PathVariable("id") int id,@ModelAttribute("edituser") EditUserAdmin edituser) {
 		User user = userDao.getById(id);
 		Cutomer cutomer = cutomerDao.getById(user.getCutomer().getId());
@@ -43,7 +44,7 @@ public class AdminUser {
 		return "admin/AdminUserEdit";
 	}
 	
-	@PostMapping("/admin/user/update/")
+	@PostMapping("/user/update/")
 	public String update(@ModelAttribute("edituser") EditUserAdmin edituser) {
 		
 		User user = edituser.getUser();

@@ -80,7 +80,7 @@
 									<div class="form-group row">
 										<label class="col-sm-3 col-form-label">PassWord</label>
 										<div class="col-sm-9">
-											<form:input path="password" type="password" class="form-control" />
+											<form:input path="password" minlength="8" type="password" class="form-control" />
 										</div>
 									</div>
 								</div>
