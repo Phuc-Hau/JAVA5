@@ -105,7 +105,7 @@
                 <div style="max-height: 612px; overflow: auto;">
                   <div style="margin-bottom: 10px; display: flex;" class="gh">
 
-                    <div><img src="/image/sach/{{ser.img}}" alt="" height="100px"></div>
+                    <div><img src="/image/sach/" alt="" height="100px"></div>
                     <div class="ghtitle">{{ser.title}}</div>
                     <div style="margin-top: 14px; color: red; font-weight: bolder; width: 90px;">
                       {{ser.price|numbers:3}}đ</div>

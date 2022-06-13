@@ -12,6 +12,11 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <title>Shop cart</title>
 
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <!-- Font Awesome -->
 <link rel="stylesheet"
@@ -66,7 +71,7 @@
 }
 </style>
 </head>
-<body>
+<body style="background: white;">
 
 	<!-- header -->
 	<jsp:include page="/view/html/header.jsp"></jsp:include>
@@ -85,13 +90,14 @@
 										<div
 											class="d-flex justify-content-between align-items-center mb-5">
 											<h1 class="fw-bold mb-0 text-black">Giỏ Hàng</h1>
-											<h6 class="mb-0 text-muted">3 sản phẩm</h6>
+											<h6 class="mb-0 text-muted">${amountcart} sản phẩm</h6>
 										</div>
 										
 										<c:forEach var="item" items="${cart}">
 										<hr class="my-4">
 										<!-- sp -->
 										<form method="post" action="" class="row mb-4 d-flex justify-content-between align-items-center">
+											<input type="hidden" name="id" value="${item.id}">
 											<div class="col-md-1 col-lg-1 col-xl-1">
 												<input style="height: 20px; width: 20px" type="checkbox">
 											</div>
@@ -106,27 +112,25 @@
 											</div>
 											
 											<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-												<button class="btn btn-link px-2"
-													onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+												<button type="submit" class="btn btn-link px-2" formaction="/account/cart/pre">
 													<i class="fas fa-minus"></i>
-													
 												</button>
 
-												<input id="form1" style="width: 50px" min="0" name="quantity" value="1"
+												<input id="form1" style="width: 50px" min="0" name="quantity" value="${item.quantity}"
 													type="number" class="form-control form-control-sm" />
 
-												<button class="btn btn-link px-2"
-													onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+												<button type="submit" class="btn btn-link px-2" formaction="/account/cart/plus">
 													<i class="fas fa-plus"></i>
-													
 												</button>
 												
 											</div>
 											<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-												<h6 class="mb-0">44.000 VND ${qty}</h6>
+												<h6 class="mb-0">${item.product.price * item.quantity} VND</h6>
 											</div>
 											<div class="col-md-1 col-lg-1 col-xl-1 text-end">
-												<a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
+												<button style="border: none; background: white;" type="submit" formaction="/account/cart/delete" class="text-muted">
+													<i class="fas fa-times"></i>
+												</button>
 											</div>
 										</form>
 										
@@ -139,14 +143,14 @@
 											</h6>
 									</div>
 								</div>
-								<div class="col-lg-4 bg-grey">
+								<form method="post" action="/account/cart/pay" class="col-lg-4 bg-grey">
 									<div class="p-5">
 										<h3 class="fw-bold mb-5 mt-2 pt-1">Tổng Đơn Hàng</h3>
 										<hr class="my-4">
 
 										<div class="d-flex justify-content-between mb-4">
-											<h5 class="text-uppercase">3 sản phẩm</h5>
-											<h5>132.000 VND</h5>
+											<h5 class="text-uppercase">${amountsum} sản phẩm</h5>
+											<h5>${pricesum } VND</h5>
 										</div>
 
 										<h5 class="text-uppercase mb-3">Phí giao hàng</h5>
@@ -178,11 +182,11 @@
 											<h5>137.000 VND</h5>
 										</div>
 
-										<button type="button" class="btn btn-dark btn-block btn-lg"
+										<button type="submit"  class="btn btn-dark btn-block btn-lg"
 											data-mdb-ripple-color="dark">Đặt Hàng</button>
 
 									</div>
-								</div>
+								</form>
 							</div>
 						</div>
 					</div>
