@@ -87,21 +87,22 @@
 											<h1 class="fw-bold mb-0 text-black">Giỏ Hàng</h1>
 											<h6 class="mb-0 text-muted">3 sản phẩm</h6>
 										</div>
+										
+										<c:forEach var="item" items="${cart}">
 										<hr class="my-4">
 										<!-- sp -->
-										<form method="post" class="row mb-4 d-flex justify-content-between align-items-center">
+										<form method="post" action="" class="row mb-4 d-flex justify-content-between align-items-center">
 											<div class="col-md-1 col-lg-1 col-xl-1">
 												<input style="height: 20px; width: 20px" type="checkbox">
 											</div>
 											<div class="col-md-2 col-lg-2 col-xl-2">
 												<img
-													src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp"
+													src="view/img/AnhWebBanHang/${item.product.imgs.get(0).image}"
 													class="img-fluid rounded-3" alt="Cotton T-shirt">
 											</div>
 											<div class="col-md-3 col-lg-3 col-xl-3">
-												<h6 class="text-muted">Shirt</h6>
-												<h6 class="text-black mb-0">Cotton T-shirt</h6>
-												<h6 class="text-muted mb-0">45.000D</h6>
+												<h6 class="text-black">${item.product.name}</h6>
+												<h6 class="text-muted mb-0">${item.product.price} VND</h6>
 											</div>
 											
 											<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
@@ -129,95 +130,7 @@
 											</div>
 										</form>
 										
-										
-										<hr class="my-4">
-										<!-- sp -->
-										<form method="post" class="row mb-4 d-flex justify-content-between align-items-center">
-											<div class="col-md-1 col-lg-1 col-xl-1">
-												<input style="height: 20px; width: 20px" type="checkbox">
-											</div>
-											<div class="col-md-2 col-lg-2 col-xl-2">
-												<img
-													src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp"
-													class="img-fluid rounded-3" alt="Cotton T-shirt">
-											</div>
-											<div class="col-md-3 col-lg-3 col-xl-3">
-												<h6 class="text-muted">Shirt</h6>
-												<h6 class="text-black mb-0">Cotton T-shirt</h6>
-												<h6 class="text-muted mb-0">45.000D</h6>
-											</div>
-											
-											<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-												<button class="btn btn-link px-2"
-													onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-													<i class="fas fa-minus"></i>
-													
-												</button>
-
-												<input id="form1" style="width: 50px" min="0" name="quantity" value="1"
-													type="number" class="form-control form-control-sm" />
-
-												<button class="btn btn-link px-2"
-													onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-													<i class="fas fa-plus"></i>
-													
-												</button>
-												
-											</div>
-											<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-												<h6 class="mb-0">44.000 VND ${qty}</h6>
-											</div>
-											<div class="col-md-1 col-lg-1 col-xl-1 text-end">
-												<a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
-											</div>
-										</form>
-
-										<hr class="my-4">
-										<!-- sp -->
-										<form method="post" class="row mb-4 d-flex justify-content-between align-items-center">
-											<div class="col-md-1 col-lg-1 col-xl-1">
-												<input style="height: 20px; width: 20px" type="checkbox">
-											</div>
-											<div class="col-md-2 col-lg-2 col-xl-2">
-												<img
-													src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp"
-													class="img-fluid rounded-3" alt="Cotton T-shirt">
-											</div>
-											<div class="col-md-3 col-lg-3 col-xl-3">
-												<h6 class="text-muted">Shirt</h6>
-												<h6 class="text-black mb-0">Cotton T-shirt</h6>
-												<h6 class="text-muted mb-0">45.000D</h6>
-											</div>
-											
-											<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-												<button class="btn btn-link px-2"
-													onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-													<i class="fas fa-minus"></i>
-													
-												</button>
-
-												<input id="form1" style="width: 50px" min="0" name="quantity" value="1"
-													type="number" class="form-control form-control-sm" />
-
-												<button class="btn btn-link px-2"
-													onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-													<i class="fas fa-plus"></i>
-													
-												</button>
-												
-											</div>
-											<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-												<h6 class="mb-0">44.000 VND ${qty}</h6>
-											</div>
-											<div class="col-md-1 col-lg-1 col-xl-1 text-end">
-												<a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
-											</div>
-										</form>
-										
-
-										
-
-										
+										</c:forEach>
 									</div>
 									<div style="margin-left: 45px; margin-bottom: 20px;" class="pt-5">
 											<h6 class="mb-0">

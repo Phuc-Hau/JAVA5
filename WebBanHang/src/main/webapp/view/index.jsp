@@ -83,9 +83,12 @@ body {
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- simple slick -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"
 		defer>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" defer>
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+		defer>
 	<script src="/view/js/Slick/slick.min.js" defer></script>
 
 </body>
