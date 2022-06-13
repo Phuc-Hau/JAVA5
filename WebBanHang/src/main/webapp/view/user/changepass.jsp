@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="_4-u5 _30ny">
-		<form class="_9vtf" data-testid="royal_login_form" action="/fpoly/oe/doipassid" method="post" onsubmit="" id="u_0_k_Ft">
+		<form class="_9vtf" data-testid="royal_login_form" action="/account/changepassuser" method="post" onsubmit="" id="u_0_k_Ft">
 			
 			<div class="mvl ptm uiInterstitial _9np_ uiInterstitialLarge uiBoxWhite">
 				<div class="uiHeader uiHeaderBottomBorder mhl mts uiHeaderPage interstitialHeader">
@@ -27,7 +27,7 @@
 						<div class="clearfix">
 							<div> 
 								<div class="_9okt olo" >
-									<input style="margin-top: 0px; border: none" type="text" class="yu inputtext _55r1 _9oku _9o1w" name="id" placeholder="User Name">
+									<input value="${cookie.username.value}" style="margin-top: 0px; border: none" type="text" class="yu inputtext _55r1 _9oku _9o1w" name="id" placeholder="User Name">
 								
 								</div >
 								<div class="_9okt olo">
@@ -55,9 +55,9 @@
 				</div>
 				<div class="hu uiInterstitialBar uiBoxGray topborder" style="margin-top: 310px;  margin-bottom: 19px;">
 					<div class="clearfix">
-						<div class="rfloat _ohf" style="margin-left: 122px">
-							<button formaction="/fpoly/oe/index" style=" padding: 0px; width: 100px;" class="_42ft _42fu _9nq1 textPadding29px selected _42g-" type="submit" id="skip_button">Hủy</button>
-							<button formaction="/fpoly/oe/doipassid" value="1" class="_42ft _42fu _9nq0 _9nq023 textPadding20px selected _42g-" id="btn_continue" name="btn_continue" type="submit">Đổi mật khẩu</button>
+						<div class="rfloat _ohf" style="margin-left: 122px; margin-top: 10px1">
+							<button formaction="/product/index" style=" padding: 0px; width: 100px;" class="_42ft _42fu _9nq1 textPadding29px selected _42g-" type="submit" id="skip_button">Hủy</button>
+							<button value="1" class="_42ft _42fu _9nq0 _9nq023 textPadding20px selected _42g-" id="btn_continue" name="btn_continue" type="submit">Đổi mật khẩu</button>
 						</div>
 						<div class="pts"></div>
 					</div>

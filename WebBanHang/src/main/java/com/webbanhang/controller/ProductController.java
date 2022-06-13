@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.webbanhang.impl.ProductDao;
+import com.webbanhang.service.CookieService;
 
 
 @Controller
@@ -16,9 +17,11 @@ public class ProductController {
 	ProductDao productDao;
 	
 	
+	
 	@RequestMapping("/product/index")
 	public String index(Model model) {		
 		model.addAttribute("product",productDao.findAll());
+		
 		return "index";
 	}
 }

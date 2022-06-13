@@ -137,10 +137,10 @@
               <div style="margin-top: 8px;color: white;">Tài Khoản</div>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               	<a class="dropdown-item" href="/admin/index">Admin</a>
-			    <a class="dropdown-item" href="#">Đăng ký</a>
+			    <a class="dropdown-item" href="/account/signup">Đăng ký</a>
 			    <a class="dropdown-item" href="/dangnhap">Đăng nhập</a>
-			    <a class="dropdown-item" href="#">Đổi mật khẩu</a>
-			    <a class="dropdown-item" href="/forgetpass">Quên mật khẩu</a>
+			    <a class="dropdown-item" href="/account/changepass">Đổi mật khẩu</a>
+			    <a class="dropdown-item" href="/account/forgetpass">Quên mật khẩu</a>
 			  </div>
                </a>
             </div>

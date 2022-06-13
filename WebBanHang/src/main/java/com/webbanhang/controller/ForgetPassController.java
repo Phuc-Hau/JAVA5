@@ -14,6 +14,7 @@ import com.webbanhang.utils.ConvenientUtils;
 import com.webbanhang.utils.MailerServiceUtils;
 
 @Controller
+@RequestMapping("/account")
 public class ForgetPassController {
 
 	@Autowired
