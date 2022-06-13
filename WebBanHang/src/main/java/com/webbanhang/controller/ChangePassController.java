@@ -13,8 +13,7 @@ import com.webbanhang.service.CookieService;
 public class ChangePassController {
 
 	@Autowired
-	CookieService cookieService;
-	
+	CookieService cookieService;	
 	@Autowired
 	UserDao userDao;
 	
