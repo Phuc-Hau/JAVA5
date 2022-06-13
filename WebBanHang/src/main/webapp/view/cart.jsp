@@ -97,7 +97,7 @@
 											</div>
 											<div class="col-md-2 col-lg-2 col-xl-2">
 												<img
-													src="view/img/AnhWebBanHang/${item.product.imgs.get(0).image}"
+													src="/image/AnhWebBanHang/${item.product.imgs.get(0).image}"
 													class="img-fluid rounded-3" alt="Cotton T-shirt">
 											</div>
 											<div class="col-md-3 col-lg-3 col-xl-3">

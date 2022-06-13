@@ -48,7 +48,7 @@
       <div class="col-sm-3 row" style="top: -20px;">
         <div class="col-sm-9">
        		 <a href="/product/index">
-          		<img src="/view/img/logo.gif" alt="" style="position: absolute; width: 195px;  margin-left: 35px;">
+          		<img src="/image/logo.gif" alt="" style="position: absolute; width: 195px;  margin-left: 35px;">
        		 </a>
         </div>
         <div class="col-sm-3 menu" style="top: 40px;">
@@ -105,7 +105,7 @@
                 <div style="max-height: 612px; overflow: auto;">
                   <div style="margin-bottom: 10px; display: flex;" class="gh">
 
-                    <div><img src="/view/img/sach/{{ser.img}}" alt="" height="100px"></div>
+                    <div><img src="/image/sach/{{ser.img}}" alt="" height="100px"></div>
                     <div class="ghtitle">{{ser.title}}</div>
                     <div style="margin-top: 14px; color: red; font-weight: bolder; width: 90px;">
                       {{ser.price|numbers:3}}đ</div>
@@ -159,7 +159,7 @@
                   d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
               </svg>
               <span class="badge tn">9</span>
-              <div style="    margin-top: 8px;color: white;">Thông Báo</div>
+              <div style="margin-top: 8px;color: white;">Thông Báo</div>
             </div>
           </a>
         </div>
@@ -168,59 +168,17 @@
 			<!-- cart -->
         <div class="col-sm-3 dropleft">
 
-          <a href="#" class="gio dropdown-toggle" data-toggle="modal" data-target="#gh">
+          <a href="/account/cart" class="gio dropdown-toggle" >
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart3"
               viewBox="0 0 16 16">
               <path
                 d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
             </svg>
-            <span class="badge tn">{{giohang.length}}</span>
+            <span class="badge tn">${amountcart}</span>
             <div style="margin-top: 8px;color: white;">Giỏ Hàng</div>
           </a>
 
-          <div class="modal fade" id="gh" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content" style="flex-direction: column;">
-                <div style="margin: 12px 20px; color: rgb(200, 200, 200);">Sản phẩm mới thêm vào giỏ</div>
-                <div style="max-height: 612px; overflow: auto;">
-                  <div ng-repeat="gh in giohang" ng-init="gh.slsp=$index+1" class="spmua"
-                    style="margin-bottom: 50px; padding: 6px;">
-
-                    <div style="margin-bottom: 10px; display: flex;" class="gh">
-                      <div><input ng-model="gh.buy" type="checkbox"
-                          style="width: 29px;height: 18px;margin-left: -4%; margin-top: 63%;"></div>
-                      <div><img src="/view/img/sach/{{gh.img}}" alt="" height="50px"></div>
-                      <div class="ghtitle">{{gh.title}}</div>
-                      <div style="margin-top: 14px; color: red; font-weight: bolder; width: 90px;">
-                        {{gh.price|numbers:3}}đ</div>
-                      <div style="margin-top: 14px;">
-                        <div class="styles_S fFLyxa" style="display: flex; ">
-                          <span class="qty-decrease" ng-click="decrease($index)"><b>-</b></span>
-                          <input min="1" type="tel" class="qty-input" ng-disabled="!gh.buy" ng-model="gh.sl"
-                            style="width: 38px; border: none; text-align: center; outline: none;">
-                          <span class="qty-increase " ng-click="plus($index)"><b>+</b></span>
-                        </div>
-                      </div>
-                      <div style="margin-right: 20px; margin-top: 14px; color: red; font-weight: bolder; width: 90px;">
-                        {{gh.price*gh.sl|numbers:3}}đ</div>
-                      <a style="color: black; margin-top: 14px;" href="" ng-click="delete($index)">Xóa</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div style="margin: 12px 20px; color: rgb(200, 200, 200); display: flex;">
-                  <h2>Tổng Tiền Thanh Toán </h2>
-                  <span style="position: absolute; right: 158px; color: red; font-weight: bold;">
-                    <h2>{{getAmount()|numbers:3}}đ</h2>
-                  </span> 
-                  <button class="btn btn-danger" style="position: absolute; bottom: 22px;right: 37px;">Thanh Toán</button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
+         
         </div>
 
 
@@ -232,7 +190,7 @@
             aria-controls="collapseExample">
             <div class="gio lan">
               <div>
-                <img src="/view/img/VN.gif" alt="" style="width: 45px; position: absolute; top: 10px; left: 11px;">
+                <img src="/image/VN.gif" alt="" style="width: 45px; position: absolute; top: 10px; left: 11px;">
               </div>
               <svg style="    position: absolute;  right: 5px;  top: 10; top: 16px;" xmlns="http://www.w3.org/2000/svg"
                 width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -248,7 +206,7 @@
                 background-color: #F2F4F5;
                 border-radius: 5px;
                 padding: 4px;">
-                <img src="/view/img/VN.gif" alt="" style="width: 45px; top: 10px; left: 11px;">
+                <img src="/image/VN.gif" alt="" style="width: 45px; top: 10px; left: 11px;">
                 VN
               </div>
               <div class=" language" style="border-radius: 5px;padding: 4px;">

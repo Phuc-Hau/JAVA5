@@ -13,6 +13,7 @@ import com.webbanhang.model.OrderDetail;
 import com.webbanhang.model.User;
 
 @Controller
+@RequestMapping("/account")
 public class CartController {
 	
 	@Autowired
@@ -23,9 +24,10 @@ public class CartController {
 
 	@RequestMapping("/cart")
 	public String cart(Model model) {
-		User user =userDao.getById(2);
+		User user =userDao.getById(3);
 		List<OrderDetail> list = orderDetailDao.findAllUsername(user.getCutomer().getId());
 		model.addAttribute("cart", list);
+		model.addAttribute("amountcart", list.size());
 		return "cart";
 	}
 }

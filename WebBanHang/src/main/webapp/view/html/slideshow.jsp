@@ -15,19 +15,19 @@
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img class="d-block w-100" src="/view/img/show1.jpg"
+				<img class="d-block w-100" src="/image/show1.jpg"
 					alt="First slide">
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" src="/view/img/show3.jpg"
+				<img class="d-block w-100" src="/image/show3.jpg"
 					alt="Second slide">
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" src="/view/img/show4.jpg"
+				<img class="d-block w-100" src="/image/img/show4.jpg"
 					alt="Third slide">
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" src="/view/img/show5.jpg"
+				<img class="d-block w-100" src="/image/img/show5.jpg"
 					alt="Third slide">
 			</div>
 		</div>
@@ -48,13 +48,13 @@
 	<!-- Show Right -->
 <div class="col-sm-3">
 	<div>
-		<img src="/view/img/sachhow1.jpg"
+		<img src="/image/sachhow1.jpg"
 			style="object-fit: cover; max-height: 174px; width: 100% !important;"
 			alt="">
 	</div>
 	<div style="margin-top: 5px;">
 
-		<img src="/view/img/sachhow2.jpg"
+		<img src="/image/sachhow2.jpg"
 			style="object-fit: cover; max-height: 174px; width: 100% !important;"
 			alt="">
 	</div>

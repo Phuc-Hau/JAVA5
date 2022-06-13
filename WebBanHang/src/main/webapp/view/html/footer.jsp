@@ -69,7 +69,7 @@
                 linkedin
               </a>
             </p>
-            <img src="/view/img/qr.png" style="width: 150px; ">
+            <img src="/image/img/qr.png" style="width: 150px; ">
         </div>
         <div class="col-sm-2">
           

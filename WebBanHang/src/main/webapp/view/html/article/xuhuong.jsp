@@ -6,7 +6,7 @@
 <div style="margin-top: 10px;">
 	<div class="row"
 		style="background: #FCDDEF; padding: 12px; border-bottom: 1px solid rgb(244, 244, 244); display: flex;">
-		<img src="img/ico_dealhot.png" alt=""> <span
+		<img src="/image/ico_dealhot.png" alt=""> <span
 			style="font-size: 17px; font-weight: bold;">Xu Hướng Mua Sắp</span>
 	</div>
 	<div class="row"
@@ -17,7 +17,7 @@
 			<div class="">
 				<a href="/product/sanpham/${item.id}"> <!-- anh -->
 					<div>
-						<img style="margin-top: 3px;width: 175px;" src="/view/img/AnhWebBanHang/${item.imgs.get(0).image}"
+						<img style="margin-top: 3px;width: 175px;" src="/image/AnhWebBanHang/${item.imgs.get(0).image}"
 							class="col-sm-12" alt="">
 					</div> <!-- Title -->
 					<h2>

@@ -52,7 +52,7 @@
 							<tr>
 								<td>${count}</td>
 								<td class="py-1"><img
-									src="/view/img/AnhWebBanHang/${item.imgs.get(0).image}"
+									src="/image/AnhWebBanHang/${item.imgs.get(0).image}"
 									alt="image" /></td>
 								<td>${item.name}</td>
 								<td>${item.amount }</td>
