@@ -53,13 +53,13 @@ public class AdminUser {
 		return "admin/AdminUserEdit";
 	}
 	
-	@PostMapping("/user/update/")
+	@PostMapping("/user/update")
 	public String update(Model model,@ModelAttribute("edituser") EditUserAdmin edituser,@RequestParam("img") MultipartFile img) {
 
 		User user = edituser.getUser();
 		Cutomer cutomer = edituser.getCutomer();
 		user.setCutomer(cutomer);
-//		user.setImg(img);
+		user.setImg(img.getOriginalFilename());
 		try {
 			cutomerDao.save(cutomer);
 			userDao.save(user);

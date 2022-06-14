@@ -34,7 +34,9 @@ public class User {
 
 	@Column(name="Username")
 	private String username;
-
+	
+	private String img;
+	
 	//bi-directional many-to-one association to Cutomer
 	@ManyToOne
 	@JoinColumn(name="Cutomers_id")

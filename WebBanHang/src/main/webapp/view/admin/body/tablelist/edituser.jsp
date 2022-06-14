@@ -14,27 +14,30 @@
 	</div>
 
 	<div class="col-lg-12 grid-margin stretch-card">
-			<div class="card">
-				<div class="card-body">
+		<div class="card">
+			<div class="card-body">
 
-				<form:form class="form-sample" method="post" modelAttribute="edituser"
-						enctype="multipart/form-data">
-						<form:input path="iduser" type="hidden" />
-						<form:input path="idcutomer" type="hidden" />
-						<form:input path="username" type="hidden"/>
+				<form:form class="form-sample" method="post"
+					modelAttribute="edituser" enctype="multipart/form-data">
+					<form:input path="iduser" type="hidden" />
+					<form:input path="idcutomer" type="hidden" />
+					<form:input path="username" type="hidden" />
 					<div class="row">
 						<div class="col-md-3">
 
 							<div class="avatar-upload">
 
 								<div class="avatar-edit">
-									<label style="position: absolute; width: 212px; height: 212px; left: -4px; top: 40px; opacity: 0;"for="upload"></label> 
-									<input id="upload" type="file" onchange="readURL(this);" name="img" accept=".png, .jpg, .jpeg" />
+									<label
+										style="position: absolute; width: 212px; height: 212px; left: -4px; top: 40px; opacity: 0;"
+										for="upload"></label> <input id="upload" type="file"
+										onchange="readURL(this);" name="img"
+										accept=".png, .jpg, .jpeg" />
 
 								</div>
 								<div class="avatar-preview" style="right: 180px; top: 50px;">
-									<img  width="200px" height="200px" id="imageResult" src="/file/user/avata.jpg"
-										alt=""> <label 
+									<img width="200px" height="200px" id="imageResult"
+										src="/file/user/${item.img }" alt=""> <label
 										style="margin-top: 25px; margin-left: 26px;" for="upload">Uploat
 										ảnh đại diện</label>
 								</div>
@@ -48,7 +51,7 @@
 									<div class="form-group row">
 										<label class="col-sm-3 col-form-label">User Name</label>
 										<div class="col-sm-9">
-											<span  class="form-control">${edituser.username}</span>
+											<span class="form-control">${edituser.username}</span>
 										</div>
 									</div>
 								</div>
@@ -74,7 +77,8 @@
 									<div class="form-group row">
 										<label class="col-sm-3 col-form-label">PassWord</label>
 										<div class="col-sm-9">
-											<form:input path="password" minlength="8" type="password" class="form-control" />
+											<form:input path="password" minlength="8" type="password"
+												class="form-control" />
 										</div>
 									</div>
 								</div>
@@ -95,47 +99,47 @@
 									<div class="form-group row">
 										<label class="col-sm-3 col-form-label">Rule</label>
 										<div class="col-sm-9">
-										<form:select path="rules" class="form-control">
-											<form:option value="0" >Admin</form:option>
-											<form:option value="1" >Người dùng</form:option>
-										</form:select>
+											<form:select path="rules" class="form-control">
+												<form:option value="0">Admin</form:option>
+												<form:option value="1">Người dùng</form:option>
+											</form:select>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="row">
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label class="col-sm-3 col-form-label">Gender</label>
-											<div class="col-sm-9">
-												<select class="form-control" name="calc_shipping_provinces"
-													required="">
-													<option value="">Tỉnh / Thành phố</option>
-												</select>
+								<div class="col-md-6">
+									<div class="form-group row">
+										<label class="col-sm-3 col-form-label">Gender</label>
+										<div class="col-sm-9">
+											<select class="form-control" name="calc_shipping_provinces"
+												required="">
+												<option value="">Tỉnh / Thành phố</option>
+											</select>
 
 
-											</div>
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div class="form-group row">
-											<label class="col-sm-3 col-form-label">Gender</label>
-											<div class="col-sm-9">
-
-												<select class="form-control" name="calc_shipping_district"
-													required="">
-													<option value="">Quận / Huyện</option>
-												</select> <input class="billing_address_1" name="" type="hidden"
-													value=""> <input class="billing_address_2" name=""
-													type="hidden" value="">
-											</div>
-										</div>
-									</div>
-
-									<input class="billing_address_1" name="" type="hidden" value="">
-									<input class="billing_address_2" name="" type="hidden" value="">
-
 								</div>
+								<div class="col-md-6">
+									<div class="form-group row">
+										<label class="col-sm-3 col-form-label">Gender</label>
+										<div class="col-sm-9">
+
+											<select class="form-control" name="calc_shipping_district"
+												required="">
+												<option value="">Quận / Huyện</option>
+											</select> <input class="billing_address_1" name="" type="hidden"
+												value=""> <input class="billing_address_2" name=""
+												type="hidden" value="">
+										</div>
+									</div>
+								</div>
+
+								<input class="billing_address_1" name="" type="hidden" value="">
+								<input class="billing_address_2" name="" type="hidden" value="">
+
+							</div>
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group row">
@@ -150,21 +154,20 @@
 										<label class="col-sm-3 col-form-label">Status</label>
 										<div class="col-sm-4">
 											<div class="form-check">
-												<label class="form-check-label"> 
-												<form:radiobutton path="status" checked="checked" 
-													class="form-check-input" name="membershipRadios"
-													id="membershipRadios1" value="true" /> Hoạt Động
+												<label class="form-check-label"> <form:radiobutton
+														path="status" checked="checked" class="form-check-input"
+														name="membershipRadios" id="membershipRadios1"
+														value="true" /> Hoạt Động
 												</label>
 											</div>
 										</div>
-										
+
 										<div class="col-sm-5">
 											<div class="form-check">
-												<label class="form-check-label">
-												 <form:radiobutton path="status" 
-													class="form-check-input" name="membershipRadios"
-													id="membershipRadios2" value="false" /> Tắc hoạt
-													động
+												<label class="form-check-label"> <form:radiobutton
+														path="status" class="form-check-input"
+														name="membershipRadios" id="membershipRadios2"
+														value="false" /> Tắc hoạt động
 												</label>
 											</div>
 										</div>
@@ -173,32 +176,33 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleTextarea1">Address</label>
-								<form:textarea path="address" class="form-control" id="exampleTextarea1" rows="4"/>
+								<form:textarea path="address" class="form-control"
+									id="exampleTextarea1" rows="4" />
 							</div>
 						</div>
 
 					</div>
 
 
-					<button type="submit" formaction="/admin/user/update/"
+					<button type="submit" formaction="/admin/user/update"
 						class="btn btn-gradient-success btn-rounded btn-fw">
 						<i class="mdi mdi-content-save"></i>Update
 					</button>
-			
+
 					<button type="button"
 						class="btn btn-gradient-warning btn-rounded btn-fw">
 						<i class="mdi mdi-reload btn-icon-prepend"></i> Reset
 					</button>
 					<button type="submit" formaction="/admin/userlist"
 						class="btn btn-gradient-primary btn-rounded btn-fw">
-						<i class="mdi mdi-exit-to-app"></i>
-						Cancel</button>
+						<i class="mdi mdi-exit-to-app"></i> Cancel
+					</button>
 				</form:form>
 			</div>
 		</div>
 
-		
-	
+
+
 	</div>
 
 </div>

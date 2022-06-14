@@ -34,6 +34,10 @@ public class EditUserAdmin {
 
 	private String tel;
 	
+	private String img;
+	
+	private String district;
+	
 	public EditUserAdmin(User user, Cutomer cutomer) {
 		this.iduser = user.getId();
 		this.username = user.getUsername();
@@ -41,6 +45,7 @@ public class EditUserAdmin {
 		this.password= user.getPassword();
 		this.rules= user.getRules();
 		this.status= user.isStatus();
+		this.img = user.getImg();
 		
 		this.idcutomer = cutomer.getId();
 		this.address = cutomer.getAddress();
@@ -48,6 +53,7 @@ public class EditUserAdmin {
 		this.name = cutomer.getName();
 		this.procvince = cutomer.getProcvince();
 		this.tel = cutomer.getTel();
+		this.district = cutomer.getDistrict();
 	}
 	
 	
@@ -59,6 +65,7 @@ public class EditUserAdmin {
 		user.setRules(rules);
 		user.setStatus(status);
 		user.setUsername(username);
+		user.setImg(img);
 		return user;
 	}
 	
@@ -70,6 +77,7 @@ public class EditUserAdmin {
 		cutomer.setName(name);
 		cutomer.setProcvince(procvince);
 		cutomer.setTel(tel);
+		cutomer.setDistrict(district);
 		return cutomer;
 	}
 	

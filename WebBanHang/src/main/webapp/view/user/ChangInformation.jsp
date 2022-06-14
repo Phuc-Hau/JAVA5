@@ -106,7 +106,7 @@
 											<label class="col-sm-3 col-form-label">Tỉnh / Thành phố </label>
 											<div class="col-sm-9">
 
-												<select class="form-control" name="calc_shipping_provinces" required="">
+												<select  class="form-control" name="calc_shipping_provinces" required="">
 
 													<option value="">Tỉnh / Thành phố</option>
 

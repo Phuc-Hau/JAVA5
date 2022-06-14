@@ -38,7 +38,7 @@
 								<tr>
 									<td>${count}</td>
 									<td class="py-1"><img
-										src="/assets/images/faces-clipart/pic-1.png"
+										src="/file/user/${item.img}"
 										alt="image" /></td>
 									<td>${item.username}</td>
 									<td>${item.cutomer.name}</td>

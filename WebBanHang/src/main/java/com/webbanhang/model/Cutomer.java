@@ -31,6 +31,8 @@ public class Cutomer {
 	private String procvince;
 
 	private String tel;
+	
+	private String district;
 
 	//bi-directional many-to-one association to Order
 	@OneToMany(mappedBy="cutomer")
