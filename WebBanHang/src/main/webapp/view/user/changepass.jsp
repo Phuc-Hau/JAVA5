@@ -7,7 +7,7 @@
 <title>Đổi mật khẩu</title>
 <link type="text/css" rel="stylesheet" href="https://static.xx.fbcdn.net/rsrc.php/v3/yn/l/0,cross/JT8ZJT0WWqH.css?_nc_x=Ij3Wp8lg5Kz" data-bootloader-hash="uUdC1OG" crossorigin="anonymous">
 <link type="text/css" rel="stylesheet" href="https://static.xx.fbcdn.net/rsrc.php/v3/yq/l/0,cross/L0VTH1UsUXD.css?_nc_x=Ij3Wp8lg5Kz" data-bootloader-hash="0QQt+vI" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="/view/css/passmabaomat.css">
+<link rel="stylesheet" type="text/css" href="/css/passmabaomat.css">
 
 </head>
 <body>
@@ -53,7 +53,7 @@
 						
 					</div>
 				</div>
-				<div class="hu uiInterstitialBar uiBoxGray topborder" style="margin-top: 310px;  margin-bottom: 19px;">
+				<div class="hu uiInterstitialBar uiBoxGray topborder" style="margin-top: 330px;  margin-bottom: 19px;">
 					<div class="clearfix">
 						<div class="rfloat _ohf" style="margin-left: 122px; margin-top: 10px1">
 							<button formaction="/product/index" style=" padding: 0px; width: 100px;" class="_42ft _42fu _9nq1 textPadding29px selected _42g-" type="submit" id="skip_button">Hủy</button>

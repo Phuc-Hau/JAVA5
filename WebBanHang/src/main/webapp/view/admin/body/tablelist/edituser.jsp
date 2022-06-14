@@ -35,11 +35,11 @@
 									<label
 										style="position: absolute; width: 212px; height: 212px; left: -4px; top: 40px; opacity: 0;"
 										for="upload"></label> <input id="upload" type="file"
-										onchange="readURL(this);" accept=".png, .jpg, .jpeg" />
+										onchange="readURL(this);" name="img" accept=".png, .jpg, .jpeg" />
 
 								</div>
 								<div class="avatar-preview" style="right: 180px; top: 50px;">
-									<img id="imageResult" src="/view/admin/assets/images/R.jpg"
+									<img id="imageResult" src="/file/user/avata.jpg"
 										alt=""> <label
 										style="margin-top: 25px; margin-left: 26px;" for="upload">Uploat
 										ảnh đại diện</label>

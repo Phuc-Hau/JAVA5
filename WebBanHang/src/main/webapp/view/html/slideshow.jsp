@@ -23,11 +23,11 @@
 					alt="Second slide">
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" src="/image/img/show4.jpg"
+				<img class="d-block w-100" src="/image/show4.jpg"
 					alt="Third slide">
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" src="/image/img/show5.jpg"
+				<img class="d-block w-100" src="/image/show5.jpg"
 					alt="Third slide">
 			</div>
 		</div>

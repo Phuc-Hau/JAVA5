@@ -31,7 +31,7 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
 	<!-- CSS -->
-<link rel="stylesheet" href="/view/css/sach.css">
+<link rel="stylesheet" href="/css/sach.css">
 
 	<style>
 @media ( min-width : 1025px) {
@@ -86,7 +86,7 @@
 						<div class="card-body p-0">
 							<div class="row g-0">
 								<div class="col-lg-8" >
-									<div class="p-5" style="height: px; overflow: auto;">
+									<div class="p-5" style="height: 570px; overflow: auto;">
 										<div
 											class="d-flex justify-content-between align-items-center mb-5">
 											<h1 class="fw-bold mb-0 text-black">Giỏ Hàng</h1>

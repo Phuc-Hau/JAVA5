@@ -1,14 +1,4 @@
 var app = angular.module("myapp", []);
-function hienthi(params) {
-    document.getElementById('danhmucsp').style.display = ''
-    document.getElementById('danhmucspkp').style.display = ''
-}
-
-function an(params) {
-    document.getElementById('danhmucsp').style.display = 'none'
-    document.getElementById('danhmucspkp').style.display = 'none'
-}
-
 
 $(document).ready(function () {
     $(window).scroll(function () {

@@ -28,7 +28,7 @@
 					<div class="sp">
 						<!-- anh -->
 						<div>
-							<img style="margin-top: 3px;" src="/image/AnhWebBanHang/${item.imgs.get(0).image}" class="col-sm-12"
+							<img style="margin-top: 3px;" src="/file/AnhWebBanHang/${item.imgs.get(0).image}" class="col-sm-12"
 								alt="">
 						</div>
 						<!-- Title -->

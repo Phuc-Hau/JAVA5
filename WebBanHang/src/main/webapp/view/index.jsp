@@ -35,12 +35,21 @@ body {
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
-
 <!-- CSS -->
-<link rel="stylesheet" href="/view/css/sach.css">
+<link rel="stylesheet" href="/css/sach.css">
 
 <!-- JS -->
-<script src="/view/js/app.js"></script>
+<script src="/js/app.js"></script>
+
+<!-- simple slick -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"
+	defer>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+	defer>
+<script src="/js/Slick/slick.min.js" defer></script>
+
 
 
 
@@ -78,18 +87,6 @@ body {
 	<!-- footer -->
 	<jsp:include page="/view/html/footer.jsp"></jsp:include>
 
-
-
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- simple slick -->
-	<link rel="stylesheet"
-		href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"
-		defer>
-	<link rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-		defer>
-	<script src="/view/js/Slick/slick.min.js" defer></script>
 
 </body>
 

@@ -141,6 +141,7 @@
 			    <a class="dropdown-item" href="/dangnhap">Đăng nhập</a>
 			    <a class="dropdown-item" href="/account/changepass">Đổi mật khẩu</a>
 			    <a class="dropdown-item" href="/account/forgetpass">Quên mật khẩu</a>
+			    <a class="dropdown-item" href="/account/signout">Đăng xuất</a>
 			  </div>
                </a>
             </div>

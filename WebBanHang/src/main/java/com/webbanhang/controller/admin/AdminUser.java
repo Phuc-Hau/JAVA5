@@ -1,5 +1,6 @@
 package com.webbanhang.controller.admin;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,12 +8,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.webbanhang.impl.CutomerDao;
 import com.webbanhang.impl.UserDao;
 import com.webbanhang.model.Cutomer;
 import com.webbanhang.model.EditUserAdmin;
 import com.webbanhang.model.User;
+import com.webbanhang.utils.ConvenientUtils;
 
 @Controller
 @RequestMapping("/admin")
@@ -23,6 +27,11 @@ public class AdminUser {
 	
 	@Autowired
 	CutomerDao cutomerDao;
+	
+	@Autowired
+	ConvenientUtils convenientUtils;
+	
+	
 
 	@RequestMapping("/userlist")
 	public String adminUserList(Model model) {
@@ -45,15 +54,17 @@ public class AdminUser {
 	}
 	
 	@PostMapping("/user/update/")
-	public String update(@ModelAttribute("edituser") EditUserAdmin edituser) {
-		
+	public String update(Model model,@ModelAttribute("edituser") EditUserAdmin edituser,@RequestParam("img") MultipartFile img) {
+
 		User user = edituser.getUser();
 		Cutomer cutomer = edituser.getCutomer();
 		user.setCutomer(cutomer);
+//		user.setImg(img);
 		try {
 			cutomerDao.save(cutomer);
 			userDao.save(user);
-		} catch (Exception e) {
+			convenientUtils.saveFile(img, "user");
+		} catch (Exception e) { 
 			e.printStackTrace();
 		}
 		

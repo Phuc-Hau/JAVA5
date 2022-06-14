@@ -218,7 +218,7 @@ a:hover {
 
 .sale-progress-bar {
     height: 16px;
-    background: url(/PS15603_PhucHau_ASM/IMG/mau.png) 0 100% no-repeat;
+    background: url(/image/mau.png) 0 100% no-repeat;
     background-size: cover;
     position: relative;
     border-radius: 8px;
@@ -227,7 +227,7 @@ a:hover {
 .sale-progress-bar__text {
     text-transform: uppercase;
     font-size: 12px;
-    color: #fff;
+    color: #000;
     z-index: 2;
     position: absolute;
     bottom: 0;
@@ -237,7 +237,7 @@ a:hover {
 
 .sale-progress-bar__complement-wrapper {
     width: 100%;
-    background: #87afac6b;;
+    background: #ffd3d3;
     overflow: hidden;
     bottom: 0;
     right: 0;

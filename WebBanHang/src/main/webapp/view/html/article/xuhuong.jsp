@@ -17,7 +17,7 @@
 			<div class="">
 				<a href="/product/sanpham/${item.id}"> <!-- anh -->
 					<div>
-						<img style="margin-top: 3px;width: 175px;" src="/image/AnhWebBanHang/${item.imgs.get(0).image}"
+						<img style="margin-top: 3px;width: 175px;" src="/file/AnhWebBanHang/${item.imgs.get(0).image}"
 							class="col-sm-12" alt="">
 					</div> <!-- Title -->
 					<h2>
