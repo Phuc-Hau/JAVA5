@@ -7,8 +7,6 @@
 <link rel="stylesheet" href="/view/admin/assets/css/uploatanh.css" />
 
 <div class="content-wrapper">
-
-
 	<div class="page-header">
 		<h3 class="page-title">
 			<span class="page-title-icon bg-gradient-primary text-white me-2">
@@ -17,9 +15,9 @@
 		</h3>
 	</div>
 
-	<div>
-		<div class="card">
-			<div class="card-body">
+	<div class="col-lg-12 grid-margin stretch-card">
+			<div class="card">
+				<div class="card-body">
 
 				<form:form class="form-sample" method="post" modelAttribute="edituser"
 						enctype="multipart/form-data">

@@ -18,7 +18,7 @@
 			<div class="card">
 				<div class="card-body">
 					User Table
-					</h4>
+					
 					<table class="table table-hover">
 						<thead>
 							<tr>
