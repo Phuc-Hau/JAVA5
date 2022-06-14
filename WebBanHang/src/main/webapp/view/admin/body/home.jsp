@@ -60,23 +60,20 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-7 grid-margin stretch-card">
-				<div class="card">
-					<div class="card-body">
-						<div class="clearfix">
-							<h4 class="card-title float-left">Visit And Sales Statistics</h4>
-							<div id="visit-sale-chart-legend"
-								class="rounded-legend legend-horizontal legend-top-right float-right"></div>
-						</div>
-						<canvas id="visit-sale-chart" class="mt-4"></canvas>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-5 grid-margin stretch-card">
+			
+			<div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                    <h4 class="card-title">Line chart</h4>
+                    <canvas id="lineChart" style="height: 247px; display: block; width: 494px;" width="617" height="308" class="chartjs-render-monitor"></canvas>
+                  </div>
+                </div>
+              </div>
+			<div class="col-md-6 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title">Traffic Sources</h4>
-						<canvas id="traffic-chart"></canvas>
+						<canvas id="doughnutChart" style="height:250px"></canvas>
 						<div id="traffic-chart-legend"
 							class="rounded-legend legend-vertical legend-bottom-left pt-4"></div>
 					</div>
@@ -84,7 +81,4 @@
 			</div>
 		</div>
 
-
 	</div>
-
-

@@ -15,7 +15,7 @@
 	href="/view/admin/assets/vendors/css/vendor.bundle.base.css">
 
 <link rel="stylesheet" href="/view/admin/assets/css/style.css">
-<!-- End layout styles -->
+
 <link rel="shortcut icon" href="/view/admin/assets/images/favicon.ico" />
 <body>
 	<div class="container-scroller">
@@ -37,27 +37,14 @@
 
 			</div>
 		</div>
-		<!-- page-body-wrapper ends -->
 	</div>
 
-
-	<!-- container-scroller -->
-	<!-- plugins:js -->
 	<script src="/view/admin/assets/vendors/js/vendor.bundle.base.js"></script>
-	<!-- endinject -->
-	<!-- Plugin js for this page -->
+
 	<script src="/view/admin/assets/vendors/chart.js/Chart.min.js"></script>
-	<script src="/view/admin/assets/js/jquery.cookie.js"
-		type="text/javascript"></script>
-	<!-- End plugin js for this page -->
-	<!-- inject:js -->
-	<script src="/view/admin/assets/js/off-canvas.js"></script>
-	<script src="/view/admin/assets/js/hoverable-collapse.js"></script>
-	<script src="/view/admin/assets/js/misc.js"></script>
-	<!-- endinject -->
-	<!-- Custom js for this page -->
+
 	<script src="/view/admin/assets/js/dashboard.js"></script>
-	<script src="/view/admin/assets/js/todolist.js"></script>
-	<!-- End custom js for this page -->
+	<script src="/view/admin/assets/js/chart.js"></script>
+	
 </body>
 </html>

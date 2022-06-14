@@ -1,8 +1,5 @@
 $(function () {
-  /* ChartJS
-   * -------
-   * Data and config for chartjs
-   */
+  
   'use strict';
   var data = {
     labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
@@ -29,6 +26,7 @@ $(function () {
       fill: false
     }]
   };
+  
   var dataDark = {
     labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
     datasets: [{
@@ -54,6 +52,7 @@ $(function () {
       fill: false
     }]
   };
+  
   var multiLineData = {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
     datasets: [{
@@ -85,6 +84,7 @@ $(function () {
     }
     ]
   };
+  
   var options = {
     scales: {
       yAxes: [{
@@ -103,6 +103,7 @@ $(function () {
     }
 
   };
+  
   var optionsDark = {
     scales: {
       yAxes: [{
@@ -133,9 +134,10 @@ $(function () {
     }
 
   };
+  
   var doughnutPieData = {
     datasets: [{
-      data: [70, 20, 10],
+      data: [60, 10, 25,5],
       backgroundColor: [
         'rgba(255, 99, 132, 0.5)',
         'rgba(54, 162, 235, 0.5)',
