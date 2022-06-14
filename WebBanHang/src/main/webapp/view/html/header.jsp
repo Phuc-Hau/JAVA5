@@ -138,7 +138,7 @@
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               	<a class="dropdown-item" href="/admin/index">Admin</a>
 			    <a class="dropdown-item" href="/account/signup">Đăng ký</a>
-			    <a class="dropdown-item" href="/dangnhap">Đăng nhập</a>
+			    <a class="dropdown-item" href="/account/signin">Đăng nhập</a>
 			    <a class="dropdown-item" href="/account/changepass">Đổi mật khẩu</a>
 			    <a class="dropdown-item" href="/account/forgetpass">Quên mật khẩu</a>
 			    <a class="dropdown-item" href="/account/signout">Đăng xuất</a>
