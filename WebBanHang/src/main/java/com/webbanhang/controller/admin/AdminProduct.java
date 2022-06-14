@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.webbanhang.impl.GroupProductDao;
 import com.webbanhang.impl.ProductDao;
 import com.webbanhang.model.GroupProduct;
+import com.webbanhang.model.User;
+import com.webbanhang.service.SessionService;
 
 @Controller
 @RequestMapping("/admin")
@@ -21,6 +23,7 @@ public class AdminProduct {
 	
 	@Autowired
 	GroupProductDao groupProductDao;
+	
 
 	@RequestMapping("/productlist")
 	public String adminProductList(Model model) {

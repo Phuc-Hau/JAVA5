@@ -84,3 +84,8 @@ h1 small {
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
+body #imageResult{
+    border-radius: 120px;
+    object-fit: cover;	
+}

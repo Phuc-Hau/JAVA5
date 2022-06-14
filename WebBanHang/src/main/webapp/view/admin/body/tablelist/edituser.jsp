@@ -28,15 +28,13 @@
 							<div class="avatar-upload">
 
 								<div class="avatar-edit">
-									<label
-										style="position: absolute; width: 212px; height: 212px; left: -4px; top: 40px; opacity: 0;"
-										for="upload"></label> <input id="upload" type="file"
-										onchange="readURL(this);" name="img" accept=".png, .jpg, .jpeg" />
+									<label style="position: absolute; width: 212px; height: 212px; left: -4px; top: 40px; opacity: 0;"for="upload"></label> 
+									<input id="upload" type="file" onchange="readURL(this);" name="img" accept=".png, .jpg, .jpeg" />
 
 								</div>
 								<div class="avatar-preview" style="right: 180px; top: 50px;">
-									<img id="imageResult" src="/file/user/avata.jpg"
-										alt=""> <label
+									<img  width="200px" height="200px" id="imageResult" src="/file/user/avata.jpg"
+										alt=""> <label 
 										style="margin-top: 25px; margin-left: 26px;" for="upload">Uploat
 										ảnh đại diện</label>
 								</div>
@@ -106,6 +104,39 @@
 								</div>
 							</div>
 							<div class="row">
+									<div class="col-md-6">
+										<div class="form-group row">
+											<label class="col-sm-3 col-form-label">Gender</label>
+											<div class="col-sm-9">
+												<select class="form-control" name="calc_shipping_provinces"
+													required="">
+													<option value="">Tỉnh / Thành phố</option>
+												</select>
+
+
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group row">
+											<label class="col-sm-3 col-form-label">Gender</label>
+											<div class="col-sm-9">
+
+												<select class="form-control" name="calc_shipping_district"
+													required="">
+													<option value="">Quận / Huyện</option>
+												</select> <input class="billing_address_1" name="" type="hidden"
+													value=""> <input class="billing_address_2" name=""
+													type="hidden" value="">
+											</div>
+										</div>
+									</div>
+
+									<input class="billing_address_1" name="" type="hidden" value="">
+									<input class="billing_address_2" name="" type="hidden" value="">
+
+								</div>
+							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group row">
 										<label class="col-sm-3 col-form-label">Date of Birth</label>
@@ -153,10 +184,7 @@
 						class="btn btn-gradient-success btn-rounded btn-fw">
 						<i class="mdi mdi-content-save"></i>Update
 					</button>
-					<button type="submit" formaction="/admin/user/delete/"
-						class="btn btn-gradient-danger btn-rounded btn-fw">
-						<i class="mdi mdi-delete-forever"></i>Delete
-					</button>
+			
 					<button type="button"
 						class="btn btn-gradient-warning btn-rounded btn-fw">
 						<i class="mdi mdi-reload btn-icon-prepend"></i> Reset
@@ -169,37 +197,8 @@
 			</div>
 		</div>
 
-
-
-		<script>
-			function readURL(input) {
-				if (input.files && input.files[0]) {
-					var reader = new FileReader();
-
-					reader.onload = function(e) {
-						$('#imageResult').attr('src', e.target.result);
-					};
-					reader.readAsDataURL(input.files[0]);
-				}
-			}
-
-			$(function() {
-				$('#upload').on('change', function() {
-					readURL(input);
-				});
-			});
-			var input = document.getElementById('upload');
-			var infoArea = document.getElementById('upload-label');
-
-			input.addEventListener('change', showFileName);
-			function showFileName(event) {
-				var input = event.srcElement;
-				var fileName = input.files[0].name;
-				infoArea.textContent = 'File name: ' + fileName;
-			}
-		</script>
-
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+		
+	
 	</div>
 
 </div>

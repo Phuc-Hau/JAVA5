@@ -17,6 +17,9 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 <!-- End layout styles -->
 <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+
+<link rel="stylesheet" href="/css/buttonUpload.css">
+
 <body>
 	<div class="container-scroller">
 
@@ -41,11 +44,9 @@
 	</div>
 
 
-	<!-- container-scroller -->
-	<!-- plugins:js -->
+	
 	<script src="/assets/vendors/js/vendor.bundle.base.js"></script>
-	<!-- endinject -->
-	<!-- Plugin js for this page -->
+
 	<script src="/assets/vendors/chart.js/Chart.min.js"></script>
 	<script src="/assets/js/jquery.cookie.js"
 		type="text/javascript"></script>
@@ -54,10 +55,15 @@
 	<script src="/assets/js/off-canvas.js"></script>
 	<script src="/assets/js/hoverable-collapse.js"></script>
 	<script src="/assets/js/misc.js"></script>
-	<!-- endinject -->
-	<!-- Custom js for this page -->
-	<script src="/assets/js/dashboard.js"></script>
-	<script src="/assets/js/todolist.js"></script>
-	<!-- End custom js for this page -->
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script
+		src="https://web8802.com/wp-content/themes/hienads/assets/js/quanhuyen.js"></script>
+
+	<script src="/js/procvince.js"></script>
+	<script src="/js/uploatfile.js"></script>
+
 </body>
 </html>

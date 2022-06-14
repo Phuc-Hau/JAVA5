@@ -55,9 +55,6 @@
 	<script src="/assets/js/hoverable-collapse.js"></script>
 	<script src="/assets/js/misc.js"></script>
 	<!-- endinject -->
-	<!-- Custom js for this page -->
-	<script src="/assets/js/dashboard.js"></script>
-	<script src="/assets/js/todolist.js"></script>
-	<!-- End custom js for this page -->
+	
 </body>
 </html>

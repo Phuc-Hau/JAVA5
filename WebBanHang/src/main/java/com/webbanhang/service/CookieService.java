@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.webbanhang.model.User;
+
 @Service
 public class CookieService {
 
@@ -57,6 +59,7 @@ public class CookieService {
 		response.addCookie(cookie);
 		return cookie;
 	}
+	
 	/**
 	* Xóa cookie khỏi client
 	* @param name tên cookie cần xóa
