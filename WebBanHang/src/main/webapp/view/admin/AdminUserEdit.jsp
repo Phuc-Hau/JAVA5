@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt"%>
+ <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,15 +10,11 @@
 <title>Insert title here</title>
 </head>
 
-<link rel="stylesheet"
-	href="/assets/vendors/mdi/css/materialdesignicons.min.css">
-<link rel="stylesheet"
-	href="/assets/vendors/css/vendor.bundle.base.css">
+<link rel="stylesheet" href="/assets/vendors/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
 
 <link rel="stylesheet" href="/assets/css/style.css">
-<!-- End layout styles -->
 <link rel="shortcut icon" href="/assets/images/favicon.ico" />
-
 <link rel="stylesheet" href="/css/buttonUpload.css">
 
 <body>
@@ -40,27 +37,19 @@
 
 			</div>
 		</div>
-		<!-- page-body-wrapper ends -->
 	</div>
 
 
 	
 	<script src="/assets/vendors/js/vendor.bundle.base.js"></script>
 
-	<script src="/assets/vendors/chart.js/Chart.min.js"></script>
-	<script src="/assets/js/jquery.cookie.js"
-		type="text/javascript"></script>
-	<!-- End plugin js for this page -->
-	<!-- inject:js -->
+	<script src="/assets/js/jquery.cookie.js" type="text/javascript"></script>
 	<script src="/assets/js/off-canvas.js"></script>
 	<script src="/assets/js/hoverable-collapse.js"></script>
 	<script src="/assets/js/misc.js"></script>
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script
-		src="https://web8802.com/wp-content/themes/hienads/assets/js/quanhuyen.js"></script>
+	<script src="https://web8802.com/wp-content/themes/hienads/assets/js/quanhuyen.js"></script>
 
 	<script src="/js/procvince.js"></script>
 	<script src="/js/uploatfile.js"></script>

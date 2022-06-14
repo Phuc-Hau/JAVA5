@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt"%>
@@ -17,8 +16,7 @@
 		<div class="card">
 			<div class="card-body">
 
-				<form:form class="form-sample" method="post"
-					modelAttribute="edituser" enctype="multipart/form-data">
+				<form:form class="form-sample" method="post" enctype="multipart/form-data" modelAttribute="edituser">
 					<form:input path="iduser" type="hidden" />
 					<form:input path="idcutomer" type="hidden" />
 					<form:input path="username" type="hidden" />
@@ -26,20 +24,15 @@
 						<div class="col-md-3">
 
 							<div class="avatar-upload">
-
 								<div class="avatar-edit">
-									<label
-										style="position: absolute; width: 212px; height: 212px; left: -4px; top: 40px; opacity: 0;"
-										for="upload"></label> <input id="upload" type="file"
-										onchange="readURL(this);" name="img"
-										accept=".png, .jpg, .jpeg" />
+									<label style="position: absolute; width: 212px; height: 212px; left: -4px; top: 40px; opacity: 0;"
+										for="upload"></label> 
+									<input id="upload" type="file" onchange="readURL(this);" name="imgs" accept=".png, .jpg, .jpeg" />
 
 								</div>
 								<div class="avatar-preview" style="right: 180px; top: 50px;">
-									<img width="200px" height="200px" id="imageResult"
-										src="/file/user/${item.img }" alt=""> <label
-										style="margin-top: 25px; margin-left: 26px;" for="upload">Uploat
-										ảnh đại diện</label>
+									<img width="200px" height="200px" id="imageResult" src="/file/user/${edituser.img}" alt=""> 
+									<label style="margin-top: 25px; margin-left: 26px;" for="upload">Uploat ảnh đại diện</label>
 								</div>
 							</div>
 
@@ -88,8 +81,8 @@
 									<div class="form-group row">
 										<label class="col-sm-3 col-form-label">Gender</label>
 										<div class="col-sm-9">
-											<form:select path="procvince" class="form-control">
-												<<form:option value="Male">Male</form:option>
+											<form:select path="sex" class="form-control">
+												<form:option value="Male">Male</form:option>
 												<form:option value="Female"> Female</form:option>
 											</form:select>
 										</div>
@@ -110,32 +103,24 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group row">
-										<label class="col-sm-3 col-form-label">Gender</label>
+										<label class="col-sm-3 col-form-label">Tỉnh / Thành phố</label>
 										<div class="col-sm-9">
-											<select class="form-control" name="calc_shipping_provinces"
-												required="">
+											<select class="form-control" name="calc_shipping_provinces" required="">
 												<option value="">Tỉnh / Thành phố</option>
 											</select>
-
-
 										</div>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group row">
-										<label class="col-sm-3 col-form-label">Gender</label>
+										<label class="col-sm-3 col-form-label">Quận / Huyện</label>
 										<div class="col-sm-9">
-
-											<select class="form-control" name="calc_shipping_district"
-												required="">
+											<select class="form-control" name="calc_shipping_district" required="">
 												<option value="">Quận / Huyện</option>
-											</select> <input class="billing_address_1" name="" type="hidden"
-												value=""> <input class="billing_address_2" name=""
-												type="hidden" value="">
+											</select>
 										</div>
 									</div>
 								</div>
-
 								<input class="billing_address_1" name="" type="hidden" value="">
 								<input class="billing_address_2" name="" type="hidden" value="">
 
@@ -154,8 +139,8 @@
 										<label class="col-sm-3 col-form-label">Status</label>
 										<div class="col-sm-4">
 											<div class="form-check">
-												<label class="form-check-label"> <form:radiobutton
-														path="status" checked="checked" class="form-check-input"
+												<label class="form-check-label"> 
+												<form:radiobutton path="status" checked="checked" class="form-check-input"
 														name="membershipRadios" id="membershipRadios1"
 														value="true" /> Hoạt Động
 												</label>
@@ -164,8 +149,8 @@
 
 										<div class="col-sm-5">
 											<div class="form-check">
-												<label class="form-check-label"> <form:radiobutton
-														path="status" class="form-check-input"
+												<label class="form-check-label"> 
+												<form:radiobutton path="status" class="form-check-input"
 														name="membershipRadios" id="membershipRadios2"
 														value="false" /> Tắc hoạt động
 												</label>
@@ -180,9 +165,7 @@
 									id="exampleTextarea1" rows="4" />
 							</div>
 						</div>
-
 					</div>
-
 
 					<button type="submit" formaction="/admin/user/update"
 						class="btn btn-gradient-success btn-rounded btn-fw">
@@ -197,6 +180,7 @@
 						class="btn btn-gradient-primary btn-rounded btn-fw">
 						<i class="mdi mdi-exit-to-app"></i> Cancel
 					</button>
+					
 				</form:form>
 			</div>
 		</div>

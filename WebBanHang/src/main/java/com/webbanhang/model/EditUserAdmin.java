@@ -22,6 +22,8 @@ public class EditUserAdmin {
 
 	private String username;
 	
+	private String img;
+	
 	private int idcutomer;
 
 	private String address;
@@ -30,13 +32,13 @@ public class EditUserAdmin {
 
 	private String name;
 
-	private String procvince;
+	private String calc_shipping_provinces;
 
 	private String tel;
 	
-	private String img;
+	private String calc_shipping_district;
 	
-	private String district;
+	private String sex;
 	
 	public EditUserAdmin(User user, Cutomer cutomer) {
 		this.iduser = user.getId();
@@ -51,9 +53,10 @@ public class EditUserAdmin {
 		this.address = cutomer.getAddress();
 		this.birthday = cutomer.getBirthday();
 		this.name = cutomer.getName();
-		this.procvince = cutomer.getProcvince();
+		this.calc_shipping_provinces = cutomer.getProcvince();
 		this.tel = cutomer.getTel();
-		this.district = cutomer.getDistrict();
+		this.calc_shipping_district = cutomer.getDistrict();
+		this.sex = cutomer.getSex();
 	}
 	
 	
@@ -75,9 +78,10 @@ public class EditUserAdmin {
 		cutomer.setAddress(address);
 		cutomer.setBirthday(birthday);
 		cutomer.setName(name);
-		cutomer.setProcvince(procvince);
+		cutomer.setProcvince(calc_shipping_provinces);
 		cutomer.setTel(tel);
-		cutomer.setDistrict(district);
+		cutomer.setDistrict(calc_shipping_district);
+		cutomer.setSex(sex);
 		return cutomer;
 	}
 	

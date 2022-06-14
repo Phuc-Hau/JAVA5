@@ -30,8 +30,6 @@ public class AdminUser {
 	
 	@Autowired
 	ConvenientUtils convenientUtils;
-	
-	
 
 	@RequestMapping("/userlist")
 	public String adminUserList(Model model) {
@@ -45,7 +43,8 @@ public class AdminUser {
 	}
 	
 	@RequestMapping("/user/edit/{id}")
-	public String adminUserEditID(Model model,@PathVariable("id") int id,@ModelAttribute("edituser") EditUserAdmin edituser) {
+	public String adminUserEditID(Model model,@PathVariable("id") int id,
+			@ModelAttribute("edituser") EditUserAdmin edituser) {
 		User user = userDao.getById(id);
 		Cutomer cutomer = cutomerDao.getById(user.getCutomer().getId());
 		edituser = new EditUserAdmin(user, cutomer);
@@ -54,21 +53,26 @@ public class AdminUser {
 	}
 	
 	@PostMapping("/user/update")
-	public String update(Model model,@ModelAttribute("edituser") EditUserAdmin edituser,@RequestParam("img") MultipartFile img) {
-
+	public String i(Model model, @RequestParam("imgs") MultipartFile imgs,
+			@ModelAttribute("edituser") EditUserAdmin edituser) {
 		User user = edituser.getUser();
 		Cutomer cutomer = edituser.getCutomer();
+		
+		if(!imgs.getOriginalFilename().equals("")) {
+			user.setImg(imgs.getOriginalFilename());
+		}else {
+			user.setImg(userDao.getById(user.getId()).getImg());
+		}
+		
 		user.setCutomer(cutomer);
-		user.setImg(img.getOriginalFilename());
 		try {
 			cutomerDao.save(cutomer);
 			userDao.save(user);
-			convenientUtils.saveFile(img, "user");
+			convenientUtils.saveFile(imgs, "user");
 		} catch (Exception e) { 
 			e.printStackTrace();
 		}
 		
 		return "redirect:/admin/user/edit/"+edituser.getIduser();
 	}
-	
 }
