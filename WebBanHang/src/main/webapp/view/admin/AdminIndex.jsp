@@ -10,41 +10,41 @@
 </head>
 
 <link rel="stylesheet"
-	href="/view/admin/assets/vendors/mdi/css/materialdesignicons.min.css">
+	href="/assets/vendors/mdi/css/materialdesignicons.min.css">
 <link rel="stylesheet"
-	href="/view/admin/assets/vendors/css/vendor.bundle.base.css">
+	href="/assets/vendors/css/vendor.bundle.base.css">
 
-<link rel="stylesheet" href="/view/admin/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css">
 
-<link rel="shortcut icon" href="/view/admin/assets/images/favicon.ico" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico" />
 <body>
 	<div class="container-scroller">
 
 		<!-- partial -->
-		<jsp:include page="/view/admin/partials/navbar.jsp"></jsp:include>
+		<jsp:include page="partials/navbar.jsp"></jsp:include>
 
 		<div class="container-fluid page-body-wrapper">
 			<!-- partial:partials/_sidebar.html -->
-			<jsp:include page="/view/admin/partials/sidebar.jsp"></jsp:include>
+			<jsp:include page="partials/sidebar.jsp"></jsp:include>
 
 			<!-- body -->
 			<div class="main-panel">
 				<!-- body:home.jsp -->
-				<jsp:include page="/view/admin/body/home.jsp"></jsp:include>
+				<jsp:include page="body/home.jsp"></jsp:include>
 				
 				<!-- partial:partials/_footer.html -->
-				<jsp:include page="/view/admin/partials/footer.jsp"></jsp:include>
+				<jsp:include page="partials/footer.jsp"></jsp:include>
 
 			</div>
 		</div>
 	</div>
 
-	<script src="/view/admin/assets/vendors/js/vendor.bundle.base.js"></script>
+	<script src="/assets/vendors/js/vendor.bundle.base.js"></script>
 
-	<script src="/view/admin/assets/vendors/chart.js/Chart.min.js"></script>
+	<script src="/assets/vendors/chart.js/Chart.min.js"></script>
 
-	<script src="/view/admin/assets/js/dashboard.js"></script>
-	<script src="/view/admin/assets/js/chart.js"></script>
+	<script src="/assets/js/dashboard.js"></script>
+	<script src="/assets/js/chart.js"></script>
 	
 </body>
 </html>
