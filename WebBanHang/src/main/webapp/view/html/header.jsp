@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt"%>
     
   <header style="height: 130px; ">
   
@@ -135,21 +137,33 @@
                   d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
               </svg>
               <div style="margin-top: 8px;color: white;">Tài Khoản</div>
+              
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              	<a class="dropdown-item" href="/admin/index">Admin</a>
-			    <a class="dropdown-item" href="/account/signup">Đăng ký</a>
-			    <a class="dropdown-item" href="/account/signin">Đăng nhập</a>
-			    <a class="dropdown-item" href="/account/changepass">Đổi mật khẩu</a>
-			    <a class="dropdown-item" href="/account/forgetpass">Quên mật khẩu</a>
-			    <a class="dropdown-item" href="/account/signout">Đăng xuất</a>
+              <c:choose>
+              		<c:when test="${empty sessionScope.user}">
+              			 <a class="dropdown-item" href="/account/signup">Đăng ký</a>
+			    		<a class="dropdown-item" href="/account/signin">Đăng nhập</a>
+			    		<a class="dropdown-item" href="/account/forgetpass">Quên mật khẩu</a>
+              		</c:when>
+              		<c:otherwise>
+              		 	<c:choose>
+	              			<c:when test="${sessionScope.user.status}">
+	              				<a class="dropdown-item" href="/admin/index">Admin</a>
+	              			</c:when>
+              			</c:choose>
+              			<a class="dropdown-item" href="/changinformation">Thông tin cá nhân</a>
+              			<a class="dropdown-item" href="/account/changepass">Đổi mật khẩu</a>
+			   			 <a class="dropdown-item" href="/account/signout">Đăng xuất</a>
+              		</c:otherwise>
+              </c:choose>
+			    
 			  </div>
+			  
                </a>
             </div>
             
         </div>
         
-
-
 			<!-- Thong bao -->
         <div class="col-sm-3">
           <a href="#">
@@ -165,10 +179,8 @@
           </a>
         </div>
 
-
 			<!-- cart -->
         <div class="col-sm-3 dropleft">
-
           <a href="/account/cart" class="gio dropdown-toggle" >
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart3"
               viewBox="0 0 16 16">
@@ -178,13 +190,7 @@
             <span class="badge tn">${amountcart}</span>
             <div style="margin-top: 8px;color: white;">Giỏ Hàng</div>
           </a>
-
-         
         </div>
-
-
-      
-
 
         <div class="col-sm-3">
           <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
