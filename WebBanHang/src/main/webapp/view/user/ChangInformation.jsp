@@ -146,11 +146,11 @@
 									</div>
 									<div class="col-md-6">
 										<div class="form-group row">
-											<label class="col-sm-3 col-form-label">Status</label>
+											<label class="col-sm-3 col-form-label">Sex</label>
 											<div class="col-sm-4">
 												<div class="form-check">
 													<label class="form-check-label"> <form:radiobutton
-															path="status" checked="checked" class="form-check-input"
+															path="sex" checked="checked" class="form-check-input"
 															name="membershipRadios" id="membershipRadios1"
 															value="true" /> Male
 													</label>
@@ -160,7 +160,7 @@
 											<div class="col-sm-5">
 												<div class="form-check">
 													<label class="form-check-label"> <form:radiobutton
-															path="status" class="form-check-input"
+															path="sex" class="form-check-input"
 															name="membershipRadios" id="membershipRadios2"
 															value="false" /> Female
 													</label>
@@ -179,7 +179,7 @@
 						</div>
 
 
-						<button type="submit" formaction="/admin/user/update/"
+						<button type="submit" formaction="/account/user/update"
 							class="btn btn-gradient-success btn-rounded btn-fw">
 							<i class="mdi mdi-content-save"></i>Update
 						</button>
