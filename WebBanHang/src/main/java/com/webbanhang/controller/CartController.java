@@ -1,5 +1,6 @@
 package com.webbanhang.controller;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.webbanhang.impl.CutomerDao;
+import com.webbanhang.impl.OrderDao;
 import com.webbanhang.impl.OrderDetailDao;
+import com.webbanhang.impl.ProductDao;
 import com.webbanhang.impl.UserDao;
+import com.webbanhang.model.Order;
 import com.webbanhang.model.OrderDetail;
+import com.webbanhang.model.Product;
 import com.webbanhang.model.User;
+import com.webbanhang.service.SessionService;
 
 @Controller
 @RequestMapping("/account")
@@ -23,24 +30,48 @@ public class CartController {
 	OrderDetailDao orderDetailDao;
 	
 	@Autowired
+	OrderDao orderDao; 
+	
+	@Autowired 
+	ProductDao productDao;
+	
+	@Autowired
 	UserDao userDao;
+	
+	@Autowired
+	SessionService session;
+	
+	@Autowired
+	CutomerDao cutomerDao;
 
 	@RequestMapping("/cart")
 	public String cart(Model model) {
 		
-		User user =userDao.getById(3);
+		User user =session.get("user");
 		
 		List<OrderDetail> list = orderDetailDao.findAllUsername(user.getCutomer().getId());
 		model.addAttribute("cart", list);
 		model.addAttribute("amountcart", list.size());
-		double priceSum=0;
+		int idCutomer =user.getCutomer().getId();
+		Order order = orderDao.findIdCutomer(idCutomer);
+		
+		double priceSum = 0;
+		
 		int amountSum=0;
 		for (OrderDetail orderDetail : list) {
-			priceSum+= orderDetail.getProduct().getPrice()*orderDetail.getQuantity();
+			priceSum+= (orderDetail.getProduct().getPrice()-orderDetail.getProduct().getPrice()
+					*orderDetail.getProduct().getPricenew())*orderDetail.getQuantity();
 			amountSum+=orderDetail.getQuantity();
 		}
 		model.addAttribute("pricesum", priceSum);
 		model.addAttribute("amountsum", amountSum);
+		
+		try {
+			order.setTotalmoney(priceSum);
+			orderDao.save(order);
+		} catch (Exception e) {
+			
+		}
 		priceSum=0;
 		amountSum=0;
 		return "cart";
@@ -62,15 +93,69 @@ public class CartController {
 		return "redirect:/account/cart";
 	}
 	
-	@PostMapping("/cart/pay")
-	public String pay() {
-		System.out.println("pay");
-		return "redirect:/account/cart";
-	}
 	
 	@PostMapping("/cart/delete")
 	public String deleteCart(@RequestParam("id") int id) {
-		System.out.println("delete: " +id);
+		OrderDetail orderDetail = orderDetailDao.getById(id);
+		orderDetailDao.delete(orderDetail);
+		return "redirect:/account/cart";
+	}
+	
+	@PostMapping("/newcart")
+	public String newCart(@RequestParam("quantity") int quantity,@RequestParam("id") int id) {
+		Product product = productDao.getById(id);
+		User user= session.get("user");
+		int idCutomer =user.getCutomer().getId();
+		
+		Order order = orderDao.findIdCutomer(idCutomer);
+		
+		OrderDetail orderDetail = new OrderDetail();
+		orderDetail.setId(orderDetailDao.maxId()+1);
+		orderDetail.setProduct(product);
+		orderDetail.setQuantity(quantity);
+		
+		try {
+			if(order != null) {
+				OrderDetail orderDetailTym = orderDetailDao.findIdProduct(product.getId(),idCutomer);
+				
+				if(orderDetailTym == null) {
+					orderDetail.setOrder(order);
+					orderDetailDao.save(orderDetail);
+				}else {
+					orderDetailTym.setQuantity(orderDetailTym.getQuantity()+quantity);
+					orderDetailDao.save(orderDetailTym);
+				}
+				
+			}else {
+				Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+				Order order2 = new Order();
+				order2.setId(orderDao.maxId()+1);
+				order2.setStatus(false);
+				order2.setOrderDetails(null);
+				order2.setDate(timestamp);
+				order2.setCutomer(cutomerDao.getById(idCutomer));
+				orderDao.save(order2);
+				orderDetail.setOrder(order2);
+				orderDetailDao.save(orderDetail);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return "redirect:/product/sanpham/"+id;
+	}
+	
+	@PostMapping("/cart/newpay")
+	public String Pay() {
+		
+		User user= session.get("user");
+		int idCutomer =user.getCutomer().getId();
+		Order order = orderDao.findIdCutomer(idCutomer);
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		order.setDate(timestamp);
+		order.setStatus(false);
+		order.setTotalmoney(1);
+		
 		return "redirect:/account/cart";
 	}
 }

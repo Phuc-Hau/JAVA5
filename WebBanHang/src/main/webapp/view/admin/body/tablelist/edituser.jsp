@@ -121,8 +121,8 @@
 										</div>
 									</div>
 								</div>
-								<input class="billing_address_1" name="" type="hidden" value="">
-								<input class="billing_address_2" name="" type="hidden" value="">
+								<input class="billing_address_1" name="provinces" type="hidden" value="">
+								<input class="billing_address_2" name="district" type="hidden" value="">
 
 							</div>
 							<div class="row">

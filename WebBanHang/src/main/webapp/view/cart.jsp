@@ -96,19 +96,17 @@
 										<c:forEach var="item" items="${cart}">
 										<hr class="my-4">
 										<!-- sp -->
-										<form method="post" action="" class="row mb-4 d-flex justify-content-between align-items-center">
+										<form method="post" action="/account/cartpay" class="row mb-4 d-flex justify-content-between align-items-center">
 											<input type="hidden" name="id" value="${item.id}">
-											<div class="col-md-1 col-lg-1 col-xl-1">
-												<input style="height: 20px; width: 20px" type="checkbox">
-											</div>
+											
 											<div class="col-md-2 col-lg-2 col-xl-2">
 												<img
-													src="/image/AnhWebBanHang/${item.product.imgs.get(0).image}"
+													src="/file/AnhWebBanHang/${item.product.imgs.get(0).image}"
 													class="img-fluid rounded-3" alt="Cotton T-shirt">
 											</div>
 											<div class="col-md-3 col-lg-3 col-xl-3">
 												<h6 class="text-black">${item.product.name}</h6>
-												<h6 class="text-muted mb-0">${item.product.price} VND</h6>
+												<h6 class="text-muted mb-0">${item.product.price-item.product.price*item.product.pricenew} VND</h6>
 											</div>
 											
 											<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
@@ -125,7 +123,7 @@
 												
 											</div>
 											<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-												<h6 class="mb-0">${item.product.price * item.quantity} VND</h6>
+												<h6 class="mb-0">${item.quantity*(item.product.price-(item.product.price*item.product.pricenew)) } VND</h6>
 											</div>
 											<div class="col-md-1 col-lg-1 col-xl-1 text-end">
 												<button style="border: none; background: white;" type="submit" formaction="/account/cart/delete" class="text-muted">
@@ -138,12 +136,12 @@
 									</div>
 									<div style="margin-left: 45px; margin-bottom: 20px;" class="pt-5">
 											<h6 class="mb-0">
-												<a href="#!" class="text-body"><i
+												<a href="/product/index" class="text-body"><i
 													class="fas fa-long-arrow-alt-left me-2"></i>Quay lại shop</a>
 											</h6>
 									</div>
 								</div>
-								<form method="post" action="/account/cart/pay" class="col-lg-4 bg-grey">
+								<form method="post" action="/account/cart/newpay" class="col-lg-4 bg-grey">
 									<div class="p-5">
 										<h3 class="fw-bold mb-5 mt-2 pt-1">Tổng Đơn Hàng</h3>
 										<hr class="my-4">
@@ -152,18 +150,14 @@
 											<h5 class="text-uppercase">${amountsum} sản phẩm</h5>
 											<h5>${pricesum } VND</h5>
 										</div>
-
-										<h5 class="text-uppercase mb-3">Phí giao hàng</h5>
-
-										<div class="mb-4 pb-2">
-											<select class="select">
-												<option value="1">Free ship</option>
-												<option value="2">10%</option>
-												<option value="3">20%</option>
-												<option value="4">30%</option>
-											</select>
+										
+										<div class="d-flex justify-content-between mb-4">
+											<h5 class="text-uppercase">Phí giao hàng</h5>
+											<h5>20000 VND</h5>
 										</div>
 
+
+										
 										<h5 class="text-uppercase mb-3">Mã giảm giá</h5>
 
 										<div class="mb-5">
@@ -179,7 +173,7 @@
 
 										<div class="d-flex justify-content-between mb-5">
 											<h5 class="text-uppercase">Tổng giá</h5>
-											<h5>137.000 VND</h5>
+											<h5>${pricesum +20.000} VND</h5>
 										</div>
 
 										<button type="submit"  class="btn btn-dark btn-block btn-lg"

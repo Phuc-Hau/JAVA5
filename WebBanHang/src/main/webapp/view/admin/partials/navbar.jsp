@@ -23,7 +23,7 @@
       <li class="nav-item nav-profile dropdown">
         <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
           <div class="nav-profile-img">
-            <img src="/assets/images/faces/face1.jpg" alt="image">
+            <img src="/file/user/${sessionScope.user.img}" style="object-fit: cover;" alt="image">
             <span class="availability-status online"></span>
           </div>
           <div class="nav-profile-text">
@@ -34,7 +34,7 @@
           <a class="dropdown-item" href="#">
             <i class="mdi mdi-cached me-2 text-success"></i> Activity Log </a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item" href="/account/signout">
             <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
         </div>
       </li>

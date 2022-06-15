@@ -1,5 +1,7 @@
 package com.webbanhang;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -8,7 +10,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.webbanhang.impl.OrderDetailDao;
 import com.webbanhang.impl.UserDao;
+import com.webbanhang.model.OrderDetail;
 import com.webbanhang.model.User;
 import com.webbanhang.service.CookieService;
 import com.webbanhang.service.SessionService;
@@ -21,11 +25,24 @@ public class AuthInterceptor implements HandlerInterceptor{
 	SessionService session;
 	
 	@Autowired
+	UserDao userDao;
+	
+	@Autowired
 	CookieService cookie;
+	
+
+	@Autowired
+	OrderDetailDao orderDetailDao;
+	
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
+		User use = userDao.checkLogin(cookie.getValue("username"), cookie.getValue("password"));
+		
+		if(use != null) {
+			session.set("user", use);
+		}
 		
 		String uri = request.getRequestURI();
 		User user = session.get("user"); // lấy từ session
@@ -52,7 +69,7 @@ public class AuthInterceptor implements HandlerInterceptor{
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("l");
+		
 		HandlerInterceptor.super.postHandle(request, response, handler, modelAndView);
 	}
 	

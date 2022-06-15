@@ -40,9 +40,9 @@
 						<div class="salegia">
 							<span
 								style="color: rgba(0, 0, 0, .13); font-size: 16px; text-decoration: line-through;">${item.price}đ</span>
-							<span style="color: red;">sale <span
+							<span style="color: red;">${item.price-item.price*item.pricenew} sale <span
 								style="margin-left: -5px; font-size: 16px;">đ</span>
-							</span> <span class="DTL">-% </span>
+							</span> <span class="DTL">${item.pricenew}% </span>
 						</div>
 						<!-- Thanh sale -->
 						<div class="sale-item__lower-wrapper">

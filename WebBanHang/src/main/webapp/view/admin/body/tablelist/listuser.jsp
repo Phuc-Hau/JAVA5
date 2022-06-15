@@ -37,7 +37,7 @@
 							<c:forEach var="item" items="${adminlistuser }">
 								<tr>
 									<td>${count}</td>
-									<td class="py-1"><img
+									<td class="py-1"><img style="object-fit: cover;"
 										src="/file/user/${item.img}"
 										alt="image" /></td>
 									<td>${item.username}</td>

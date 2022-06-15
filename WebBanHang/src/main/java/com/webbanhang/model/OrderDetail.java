@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "Orderdetail")
 public class OrderDetail {
 
-	@Id
+	@Id 
 	@Column(name="Id")
 	private int id;
 

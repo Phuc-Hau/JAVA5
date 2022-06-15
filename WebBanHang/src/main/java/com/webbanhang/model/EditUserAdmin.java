@@ -32,11 +32,11 @@ public class EditUserAdmin {
 
 	private String name;
 
-	private String calc_shipping_provinces;
+	private String provinces;
 
 	private String tel;
 	
-	private String calc_shipping_district;
+	private String district;
 	
 	private String sex;
 	
@@ -53,9 +53,9 @@ public class EditUserAdmin {
 		this.address = cutomer.getAddress();
 		this.birthday = cutomer.getBirthday();
 		this.name = cutomer.getName();
-		this.calc_shipping_provinces = cutomer.getProcvince();
+		this.provinces = cutomer.getProcvince();
 		this.tel = cutomer.getTel();
-		this.calc_shipping_district = cutomer.getDistrict();
+		this.district = cutomer.getDistrict();
 		this.sex = cutomer.getSex();
 	}
 	
@@ -78,9 +78,9 @@ public class EditUserAdmin {
 		cutomer.setAddress(address);
 		cutomer.setBirthday(birthday);
 		cutomer.setName(name);
-		cutomer.setProcvince(calc_shipping_provinces);
+		cutomer.setProcvince(provinces);
 		cutomer.setTel(tel);
-		cutomer.setDistrict(calc_shipping_district);
+		cutomer.setDistrict(district);
 		cutomer.setSex(sex);
 		return cutomer;
 	}

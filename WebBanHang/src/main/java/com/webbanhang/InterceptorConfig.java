@@ -1,12 +1,12 @@
 package com.webbanhang;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.webbanhang.impl.UserDao;
-import com.webbanhang.model.User;
 import com.webbanhang.service.CookieService;
 import com.webbanhang.service.SessionService;
 
@@ -28,15 +28,9 @@ public class InterceptorConfig implements WebMvcConfigurer{
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(auth)
-		.addPathPatterns("/account/cart", "/admin/**")
+		.addPathPatterns("/account/cart", "/admin/**","/account/newcart","/account/cartpay")
 		.excludePathPatterns("/assets/**","/product/index");
 		
-//		User user = userDao.checkLogin(cookie.getValue("user"), cookie.getValue("password"));
-//		if(user != null) {
-//			session.set("user", user);
-//		}
 	}
-
-
 	
 }

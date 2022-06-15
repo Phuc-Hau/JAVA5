@@ -17,6 +17,7 @@ import java.util.List;
 @Entity
 @Table(name="Orders")
 public class Order {
+	
 	@Id
 	@Column(name="Id")
 	private int id;
@@ -25,7 +26,7 @@ public class Order {
 	private Timestamp date;
 
 	@Column(name="Status")
-	private int status;
+	private boolean status;
 
 	@Column(name="Totalmoney")
 	private double totalmoney;
