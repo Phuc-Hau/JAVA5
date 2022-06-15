@@ -217,6 +217,7 @@
                 VN
               </div>
               <div class=" language" style="border-radius: 5px;padding: 4px;">
+              <img src="/image/English.gif" alt="" style="width: 45px; top: 10px; left: 11px;">
                 UK
               </div>
             </div>
