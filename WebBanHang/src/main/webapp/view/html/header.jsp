@@ -151,7 +151,7 @@
 	              				<a class="dropdown-item" href="/admin/index">Admin</a>
 	              			</c:when>
               			</c:choose>
-              			<a class="dropdown-item" href="/changinformation">Thông tin cá nhân</a>
+              			<a class="dropdown-item" href="/account/changinformation">Thông tin cá nhân</a>
               			<a class="dropdown-item" href="/account/changepass">Đổi mật khẩu</a>
 			   			 <a class="dropdown-item" href="/account/signout">Đăng xuất</a>
               		</c:otherwise>

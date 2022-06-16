@@ -110,7 +110,12 @@ public class CartController {
 		Order order = orderDao.findIdCutomer(idCutomer);
 		
 		OrderDetail orderDetail = new OrderDetail();
-		orderDetail.setId(orderDetailDao.maxId()+1);
+		try {
+			orderDetail.setId(orderDetailDao.maxId()+1);
+		} catch (Exception e) {
+			orderDetail.setId(0);
+		}
+		
 		orderDetail.setProduct(product);
 		orderDetail.setQuantity(quantity);
 		
@@ -129,7 +134,11 @@ public class CartController {
 			}else {
 				Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 				Order order2 = new Order();
-				order2.setId(orderDao.maxId()+1);
+				try {
+					order2.setId(orderDao.maxId()+1);
+				} catch (Exception e) {
+					order2.setId(1);
+				}
 				order2.setStatus(false);
 				order2.setOrderDetails(null);
 				order2.setDate(timestamp);

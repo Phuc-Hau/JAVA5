@@ -12,13 +12,31 @@
 	href="/assets/vendors/mdi/css/materialdesignicons.min.css">
 <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
 <link rel="stylesheet" href="/assets/css/style.css">
 <!-- End layout styles -->
 <link rel="shortcut icon" href="/assets/images/favicon.ico" />
 
 <link rel="stylesheet" href="/css/buttonUpload.css">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/sach.css">
+
 </head>
 <body>
+ <jsp:include page="/view/html/header.jsp"></jsp:include>
 
 	<div class="content-wrapper">
 		<div class="page-header">
@@ -47,14 +65,14 @@
 										<label
 											style="position: absolute; width: 212px; height: 212px; left: -4px; top: 40px; opacity: 0;"
 											for="upload"></label> <input id="upload" type="file"
-											onchange="readURL(this);" name="img"
+											onchange="readURL(this);" name="imgs"
 											accept=".png, .jpg, .jpeg" />
 
 									</div>
 									<div class="avatar-preview" style="right: 180px; top: 50px;">
 										<img width="200px" height="200px" id="imageResult"
-											src="/file/user/avata.jpg" alt=""> <label
-											style="margin-top: 25px; margin-left: 26px;" for="upload">Uploat
+											src="/file/user/${edituser.img }" alt=""> <label
+											style="margin-top: 25px; margin-left: 26px;" for="upload">Upload
 											ảnh đại diện</label>
 									</div>
 								</div>
@@ -183,11 +201,11 @@
 							class="btn btn-gradient-success btn-rounded btn-fw">
 							<i class="mdi mdi-content-save"></i>Update
 						</button>
-						<button type="button"
+						<button type="submit" formaction="/account/changinformation"
 							class="btn btn-gradient-warning btn-rounded btn-fw">
 							<i class="mdi mdi-reload btn-icon-prepend"></i> Reset
 						</button>
-						<button type="submit" formaction="/admin/userlist"
+						<button type="submit" formaction="/product/index"
 							class="btn btn-gradient-primary btn-rounded btn-fw">
 							<i class="mdi mdi-exit-to-app"></i> Cancel
 						</button>
@@ -216,6 +234,6 @@
 	<script src="/assets/js/hoverable-collapse.js"></script>
 	<script src="/assets/js/misc.js"></script>
 
-
+  <jsp:include page="/view/html/footer.jsp"></jsp:include>
 </body>
 </html>

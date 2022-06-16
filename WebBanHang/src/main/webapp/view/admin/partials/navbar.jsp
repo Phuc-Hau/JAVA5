@@ -27,7 +27,7 @@
             <span class="availability-status online"></span>
           </div>
           <div class="nav-profile-text">
-            <p class="mb-1 text-black">Phúc Hậu</p>
+            <p class="mb-1 text-black">${sessionScope.user.cutomer.name}</p>
           </div>
         </a>
         <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">

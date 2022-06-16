@@ -2,20 +2,23 @@ package com.webbanhang.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.webbanhang.impl.CutomerDao;
 import com.webbanhang.impl.UserDao;
 import com.webbanhang.model.Cutomer;
 import com.webbanhang.model.EditUserAdmin;
 import com.webbanhang.model.User;
+import com.webbanhang.service.SessionService;
 import com.webbanhang.utils.ConvenientUtils;
 
 @Controller
-
+@RequestMapping("account")
 public class ChangInformatinonController {
 	@Autowired
 	UserDao userDao;
@@ -25,40 +28,45 @@ public class ChangInformatinonController {
 	
 	@Autowired
 	ConvenientUtils convenientUtils;
+	
+	@Autowired
+	SessionService session;
 
 	@RequestMapping("/changinformation")
-	public String changInformation(@ModelAttribute("edituser") EditUserAdmin edituser) {
+	public String changInformation(@ModelAttribute("edituser") EditUserAdmin edituser,Model model) {
+		User user = session.get("user");
+		edituser = new EditUserAdmin(user,user.getCutomer());
 		
+		model.addAttribute("edituser",edituser);
 		
 		return "user/ChangInformation";
 	}
 	
-	@PostMapping("/account/user/update")
-	public String changInformation(@ModelAttribute("edituser") EditUserAdmin edituser,
-			@RequestParam("calc_shipping_district") String district,
-			@RequestParam("calc_shipping_provinces") String provinces
+	@PostMapping("/user/update")
+	public String changInformation(Model model, @RequestParam("imgs") MultipartFile imgs,
+			@ModelAttribute("edituser") EditUserAdmin edituser) {
+			User useo = session.get("user");
 		
-			) {
 			User user = edituser.getUser();
+			user.setRules(useo.getRules());
+			user.setStatus(useo.isStatus());
 			Cutomer cutomer = edituser.getCutomer();
-		    cutomer.setDistrict(district);
-		    cutomer.setProcvince(provinces);
-		   
-		    System.out.println(district + provinces);
-		 
 			
-			try {
-//				cutomerDao.save(cutomer);
-//				userDao.save(user);
-//				convenientUtils.saveFile(img, "user");
-			}catch(Exception e) {
-				e.printStackTrace();
-				
+			if(!imgs.getOriginalFilename().equals("")) {
+				user.setImg(imgs.getOriginalFilename());
+			}else {
+				user.setImg(userDao.getById(user.getId()).getImg());
 			}
-		
-		
-		
-
+			
+			user.setCutomer(cutomer);
+		   
+			try {
+				cutomerDao.save(cutomer);
+				userDao.save(user);
+				convenientUtils.saveFile(imgs, "user");
+			} catch (Exception e) { 
+				e.printStackTrace();
+			}
 			return "user/ChangInformation";
 	}
 }
