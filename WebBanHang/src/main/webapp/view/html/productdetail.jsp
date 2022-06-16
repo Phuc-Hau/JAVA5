@@ -105,69 +105,11 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 					<small class="pt-1">Đã bán </small>
 				</div>
 				<h3>Giá sản phẩm</h3>
-				<h3 class="line-through font-weight-semi-bold mb-4">${chitiet.pricenew }</h3>
+				<h3 class="line-through font-weight-semi-bold mb-4">${chitiet.price }</h3>
 				<h3>Giá sale</h3>
-				<h3 class=" font-weight-semi-bold mb-4">${chitiet.price }</h3>
-				<div class="d-flex mb-3">
-					<p class="text-success font-weight-medium mb-0 mr-3">Sizes:</p>
-					<form>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input type="radio" class="custom-control-input" id="size-1"
-								name="size"> <label class="custom-control-label"
-								for="size-1">XS</label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input type="radio" class="custom-control-input" id="size-2"
-								name="size"> <label class="custom-control-label"
-								for="size-2">S</label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input type="radio" class="custom-control-input" id="size-3"
-								name="size"> <label class="custom-control-label"
-								for="size-3">M</label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input type="radio" class="custom-control-input" id="size-4"
-								name="size"> <label class="custom-control-label"
-								for="size-4">L</label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input type="radio" class="custom-control-input" id="size-5"
-								name="size"> <label class="custom-control-label"
-								for="size-5">XL</label>
-						</div>
-					</form>
-				</div>
-				<div class="d-flex mb-4">
-					<p class="text-dark font-weight-medium mb-0 mr-3">Colors:</p>
-					<form>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input type="radio" class="custom-control-input" id="color-1"
-								name="color"> <label class="custom-control-label"
-								for="color-1">Black</label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input type="radio" class="custom-control-input" id="color-2"
-								name="color"> <label class="custom-control-label"
-								for="color-2">White</label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input type="radio" class="custom-control-input" id="color-3"
-								name="color"> <label class="custom-control-label"
-								for="color-3">Red</label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input type="radio" class="custom-control-input" id="color-4"
-								name="color"> <label class="custom-control-label"
-								for="color-4">Blue</label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input type="radio" class="custom-control-input" id="color-5"
-								name="color"> <label class="custom-control-label"
-								for="color-5">Green</label>
-						</div>
-					</form>
-				</div>
+				<h3 class=" font-weight-semi-bold mb-4">${chitiet.price-(chitiet.pricenew*chitiet.price) }</h3>
+				
+					
 				<form action="/account/newcart" method="post">
 					<input type="hidden" name="id" value="${chitiet.id}"/>
 
@@ -213,8 +155,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 				<div
 					class="nav nav-tabs justify-content-center border-secondary mb-4">
 					<a class="nav-item nav-link active" data-toggle="tab"
-						href="#tab-pane-1">Description</a> <a class="nav-item nav-link"
-						data-toggle="tab" href="#tab-pane-2">Information</a> <a
+						href="#tab-pane-1" style="color: black;">Description</a> <a style="color: black;" class="nav-item nav-link"
+						data-toggle="tab" href="#tab-pane-2">Information</a> <a style="color: black;"
 						class="nav-item nav-link" data-toggle="tab" href="#tab-pane-3">Reviews
 						(0)</a>
 				</div>

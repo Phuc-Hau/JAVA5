@@ -1,5 +1,7 @@
 package com.webbanhang.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.webbanhang.impl.CutomerDao;
+import com.webbanhang.impl.OrderDetailDao;
 import com.webbanhang.impl.UserDao;
 import com.webbanhang.model.Cutomer;
 import com.webbanhang.model.EditUserAdmin;
+import com.webbanhang.model.OrderDetail;
 import com.webbanhang.model.User;
 import com.webbanhang.service.SessionService;
 import com.webbanhang.utils.ConvenientUtils;
@@ -31,10 +35,18 @@ public class ChangInformatinonController {
 	
 	@Autowired
 	SessionService session;
+	
+	@Autowired
+	OrderDetailDao orderDetailDao;
 
 	@RequestMapping("/changinformation")
 	public String changInformation(@ModelAttribute("edituser") EditUserAdmin edituser,Model model) {
-		User user = session.get("user");
+		User user =session.get("user");
+		if(user !=null) {
+			List<OrderDetail> list = orderDetailDao.findAllUsername(user.getCutomer().getId());
+			model.addAttribute("amountcart", list.size());
+		}
+		
 		edituser = new EditUserAdmin(user,user.getCutomer());
 		
 		model.addAttribute("edituser",edituser);
@@ -67,6 +79,6 @@ public class ChangInformatinonController {
 			} catch (Exception e) { 
 				e.printStackTrace();
 			}
-			return "user/ChangInformation";
+			return"redirect:/account/changinformation";
 	}
 }

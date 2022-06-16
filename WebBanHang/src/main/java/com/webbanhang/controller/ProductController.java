@@ -13,6 +13,7 @@ import com.webbanhang.impl.ProductDao;
 import com.webbanhang.impl.UserDao;
 import com.webbanhang.model.OrderDetail;
 import com.webbanhang.model.User;
+import com.webbanhang.service.CookieService;
 import com.webbanhang.service.SessionService;
 
 
@@ -31,10 +32,17 @@ public class ProductController {
 	@Autowired
 	OrderDetailDao orderDetailDao;
 	
+	@Autowired
+	CookieService cookie;
 	
 	
 	@RequestMapping("/product/index")
 	public String index(Model model) {		
+		User users = userDao.checkLogin(cookie.getValue("username"), cookie.getValue("password"));
+		
+		if(users != null) {
+			session.set("user", users);
+		}
 		User user =session.get("user");
 		if(user !=null) {
 			List<OrderDetail> list = orderDetailDao.findAllUsername(user.getCutomer().getId());
