@@ -106,7 +106,7 @@
 											<label class="col-sm-3 col-form-label">Tỉnh / Thành phố </label>
 											<div class="col-sm-9">
 
-												<select  class="form-control" name="calc_shipping_provinces" required="">
+												<select  id="provin" class="form-control" name="calc_shipping_provinces" required="">
 
 													<option value="">Tỉnh / Thành phố</option>
 
@@ -132,8 +132,8 @@
 										
 									</div>
 
-									<input class="billing_address_1" name="" type="hidden" value=""> 
-									<input class="billing_address_2" name="" type="hidden" value="">
+									<input class="billing_address_1" id="address_1" name="provinces" type="hidden" value="${edituser.provinces }">
+									<input class="billing_address_2" id="address_2" name="district" type="hidden" value="${edituser.district }">
 								</div>
 								<div class="row">
 									<div class="col-md-6">

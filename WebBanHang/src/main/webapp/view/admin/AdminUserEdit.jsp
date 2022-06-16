@@ -49,7 +49,7 @@
 	<script src="/assets/js/misc.js"></script>
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://web8802.com/wp-content/themes/hienads/assets/js/quanhuyen.js"></script>
+	<script src="/js/quanhuyen.js"></script>
 
 	<script src="/js/procvince.js"></script>
 	<script src="/js/uploatfile.js"></script>
