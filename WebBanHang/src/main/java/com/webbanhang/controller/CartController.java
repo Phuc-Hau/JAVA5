@@ -155,7 +155,7 @@ public class CartController {
 		order.setDate(timestamp);
 		order.setStatus(false);
 		order.setTotalmoney(1);
-		
+//		orderDao.save(order);
 		return "redirect:/account/cart";
 	}
 }

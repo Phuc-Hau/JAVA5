@@ -121,8 +121,6 @@
 										</div>
 									</div>
 								</div>
-								${edituser.provinces }
-								${edituser.district }
 								<input class="billing_address_1" id="address_1" name="provinces" type="hidden" value="${edituser.provinces }">
 								<input class="billing_address_2" id="address_2" name="district" type="hidden" value="${edituser.district }">
 

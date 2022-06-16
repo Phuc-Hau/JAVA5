@@ -66,8 +66,6 @@ $('select[name="calc_shipping_provinces"]').each(function() {
 
           $('input.billing_address_2').attr('value', address_2)
 
-          
-
         })
 
       } else {
@@ -84,8 +82,9 @@ $('select[name="calc_shipping_provinces"]').each(function() {
 
 
 
-var y = document.getElementById("address_1").value;
+var y = document.getElementById("address_2").value;
 var o = document.getElementById("provin").value-1;
+
 if (address_2 = y) {
 	$('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>')
 	
