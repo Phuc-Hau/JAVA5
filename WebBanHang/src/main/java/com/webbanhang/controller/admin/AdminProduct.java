@@ -8,10 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.webbanhang.impl.GroupProductDao;
 import com.webbanhang.impl.ProductDao;
 import com.webbanhang.model.GroupProduct;
+import com.webbanhang.model.Product;
 import com.webbanhang.model.User;
 import com.webbanhang.service.SessionService;
 
@@ -20,23 +22,28 @@ import com.webbanhang.service.SessionService;
 public class AdminProduct {
 	@Autowired
 	ProductDao productDao;
-	
+
 	@Autowired
 	GroupProductDao groupProductDao;
-	
 
 	@RequestMapping("/productlist")
 	public String adminProductList(Model model) {
 		model.addAttribute("adminlistproduct", productDao.findAll());
 		return "admin/AdminProductList";
 	}
-	
+
 	@RequestMapping("/product/edit/{id}")
-	public String adminEditProductList(Model model,@PathVariable("id") int id) {
-		System.out.println(id);
-		return "admin/AdminProductList";
+	public String adminEditProductList(Model model, @PathVariable("id") int id) {
+		model.addAttribute("product", productDao.getById(id));
+		return "admin/AdminProductEdit";
 	}
-	
+
+	@RequestMapping("/product/update")
+	public String updateproduct(Model model,@ModelAttribute("product") Product product,@RequestParam("groups") String group) {
+		System.out.println(group);
+		return "redirect:/admin/product/edit/"+product.getId();
+	}
+
 	@ModelAttribute("groupproduct")
 	public List<GroupProduct> getFaculties() {
 		List<GroupProduct> list = groupProductDao.findAll();

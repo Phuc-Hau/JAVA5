@@ -28,7 +28,7 @@
 						<c:forEach var="group" items="${groupproduct}">
 							<option value="${group.id}">${group.name}</option>
 						</c:forEach>
-						<select>
+						</select>
 					</form>
 					
 				</div>
@@ -61,7 +61,7 @@
 									class="mdi mdi-arrow-down"></i></td>
 								<td>27/10/2022</td>
 								<td><c:choose>
-										<c:when test="${item.status==1}">
+										<c:when test="${item.status}">
 											<div class="form-check form-check-success">
 												<label class="form-check-label"> <input type="radio"
 													class="form-check-input" id="ExampleRadio2" checked="">

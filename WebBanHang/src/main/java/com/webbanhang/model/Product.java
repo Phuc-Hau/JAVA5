@@ -45,7 +45,7 @@ public class Product {
 	private double pricenew;
 
 	@Column(name = "Status")
-	private int status;
+	private boolean status;
 
 	// bi-directional many-to-one association to Img
 	@OneToMany(mappedBy = "product")
