@@ -157,14 +157,24 @@ public class CartController {
 	@PostMapping("/cart/newpay")
 	public String Pay() {
 		
+		
 		User user= session.get("user");
+		List<OrderDetail> list = orderDetailDao.findAllUsername(user.getCutomer().getId());
+		double priceSum = 20000;
+		
+		for (OrderDetail orderDetail : list) {
+			priceSum+= (orderDetail.getProduct().getPrice()-orderDetail.getProduct().getPrice()
+					*orderDetail.getProduct().getPricenew())*orderDetail.getQuantity();
+			
+		}
 		int idCutomer =user.getCutomer().getId();
 		Order order = orderDao.findIdCutomer(idCutomer);
+
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		order.setDate(timestamp);
-		order.setStatus(false);
-		order.setTotalmoney(1);
-//		orderDao.save(order);
+		order.setStatus(true);
+		order.setTotalmoney(priceSum); 
+		orderDao.save(order);
 		return "redirect:/account/cart";
 	}
 }

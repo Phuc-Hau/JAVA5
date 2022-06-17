@@ -24,9 +24,9 @@
 						<img src="/assets/images/dashboard/circle.svg"
 							class="card-img-absolute" alt="circle-image" />
 						<h4 class="font-weight-normal mb-3">
-							Weekly Sales <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+							Month ${month} Sales <i class="mdi mdi-chart-line mdi-24px float-right"></i>
 						</h4>
-						<h2 class="mb-5">$ 15,0000</h2>
+						<h2 class="mb-5">${sumpricemonth} VND</h2>
 						<h6 class="card-text">Increased by 60%</h6>
 					</div>
 				</div>
@@ -37,10 +37,10 @@
 						<img src="/assets/images/dashboard/circle.svg"
 							class="card-img-absolute" alt="circle-image" />
 						<h4 class="font-weight-normal mb-3">
-							Weekly Orders <i
+							Month Orders <i
 								class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
 						</h4>
-						<h2 class="mb-5">45,6334</h2>
+						<h2 class="mb-5">${sumcount}</h2>
 						<h6 class="card-text">Decreased by 10%</h6>
 					</div>
 				</div>
@@ -51,9 +51,9 @@
 						<img src="/assets/images/dashboard/circle.svg"
 							class="card-img-absolute" alt="circle-image" />
 						<h4 class="font-weight-normal mb-3">
-							Visitors Online <i class="mdi mdi-diamond mdi-24px float-right"></i>
+							Year ${year} Sales <i class="mdi mdi-diamond mdi-24px float-right"></i>
 						</h4>
-						<h2 class="mb-5">95,5741</h2>
+						<h2 class="mb-5">${sumpriceyear} VND</h2>
 						<h6 class="card-text">Increased by 5%</h6>
 					</div>
 				</div>
@@ -65,7 +65,7 @@
                 <div class="card">
                   <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
                     <h4 class="card-title">Line chart</h4>
-                    <canvas id="lineChart" style="height: 247px; display: block; width: 494px;" width="617" height="308" class="chartjs-render-monitor"></canvas>
+                    <canvas id="barChart" style="height:230px"></canvas>
                   </div>
                 </div>
               </div>

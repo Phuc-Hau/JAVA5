@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 
 <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+
 <body>
 	<div class="container-scroller">
 
@@ -49,8 +50,9 @@
 	<script src="/assets/js/hoverable-collapse.js"></script>
 	<script src="/assets/js/misc.js"></script>
 
-	<script src="/assets/js/dashboard.js"></script>
-	<script src="/assets/js/chart.js"></script>
+	<script src="/js/datamonth.js" defer></script>
+	<script src="/assets/js/chart.js" defer></script>
+	
 	
 </body>
 </html>
