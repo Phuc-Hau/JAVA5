@@ -176,7 +176,7 @@
 											<h5>${pricesum +20.000} VND</h5>
 										</div>
 
-										<button type="submit"  class="btn btn-dark btn-block btn-lg"
+										<button type="submit"   class="btn btn-dark btn-block btn-lg"
 											data-mdb-ripple-color="dark">Đặt Hàng</button>
 
 									</div>
